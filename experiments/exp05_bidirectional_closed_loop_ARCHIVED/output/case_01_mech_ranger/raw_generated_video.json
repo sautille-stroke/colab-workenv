@@ -1,0 +1,12 @@
+{
+  "engine": "Google_Veo_2",
+  "model_id": "veo-2.0-generate-001",
+  "worker_account": "Ultra-Account-03",
+  "anchor_image": "H:\\dervgen\\workspace\\experiments\\exp05_bidirectional_closed_loop\\checkpoints\\case_01_mech_ranger\\frame_0000_anchor.png",
+  "prompt": "heavy sci-fi tactical mech ranger holding plasma rifle, weathered titanium plating, mechanical joints, flat neutral lighting",
+  "camera_motion": "Slow_Dolly_In_With_Orbit",
+  "duration_sec": 4.0,
+  "frame_count": 96,
+  "output_video": "H:\\dervgen\\workspace\\experiments\\exp05_bidirectional_closed_loop\\output\\case_01_mech_ranger\\raw_generated_video.mp4",
+  "timestamp": 1794286075.8428497
+}

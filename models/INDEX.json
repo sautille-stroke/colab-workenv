@@ -1,0 +1,1190 @@
+{
+  "version": "1.9.0",
+  "storage_root": "/content/drive/MyDrive/dervgen",
+  "updated_at": "2026-11-13",
+  "ecosystem_alignment": [
+    "grand-studio (Master Production Pipelines & Asset Distillation GF-ARCH-0044)",
+    "vg-core (Vision-Graphics & Transmutation Pipeline)",
+    "graphics-radar (Evaluations & SOTA Tracking: Geometry, Motion & Rendering)",
+    "caelum-core (OpenPBR Spectral Path Tracing & OIDN Denoising)",
+    "fulgur (AAA Real-time Renderer & Fast GBuffer AOV Exporter)",
+    "asset-forge (Procedural Topology & Auto Rigging)"
+  ],
+  "models": [
+    {
+      "id": "sam2_large",
+      "name": "Segment Anything 2 (Hiera-Large)",
+      "usage": "foundation",
+      "target_file": "foundation/sam2/sam2_hiera_large.pt",
+      "url": "https://dl.fbaipublicfiles.com/segment_anything_2/072824/sam2_hiera_large.pt",
+      "size_mb": 898,
+      "priority": "P0",
+      "description": "Meta SAM 2 video & 3D foreground mask segmentation"
+    },
+    {
+      "id": "sam2_base_plus",
+      "name": "Segment Anything 2 (Hiera-Base-Plus)",
+      "usage": "foundation",
+      "target_file": "foundation/sam2/sam2_hiera_base_plus.pt",
+      "url": "https://dl.fbaipublicfiles.com/segment_anything_2/072824/sam2_hiera_base_plus.pt",
+      "size_mb": 323,
+      "priority": "P1",
+      "description": "Lightweight SAM 2 for fast real-time mask tracking"
+    },
+    {
+      "id": "dinov2_vits14",
+      "name": "DINOv2 Small (ViT-S/14)",
+      "usage": "foundation",
+      "target_file": "foundation/dinov2/dinov2_vits14_pretrain.pth",
+      "url": "https://dl.fbaipublicfiles.com/dinov2/dinov2_vits14/dinov2_vits14_pretrain.pth",
+      "size_mb": 88,
+      "priority": "P0",
+      "description": "Dense point correspondence & semantic matching head"
+    },
+    {
+      "id": "dinov2_vitl14",
+      "name": "DINOv2 Large (ViT-L/14)",
+      "usage": "foundation",
+      "target_file": "foundation/dinov2/dinov2_vitl14_pretrain.pth",
+      "url": "https://dl.fbaipublicfiles.com/dinov2/dinov2_vitl14/dinov2_vitl14_pretrain.pth",
+      "size_mb": 1145,
+      "priority": "P1",
+      "description": "High-capacity dense feature extractor for fine-grained 3D reconstruction"
+    },
+    {
+      "id": "clip_vit_l14",
+      "name": "CLIP (ViT-L/14@336px)",
+      "usage": "foundation",
+      "target_file": "foundation/clip/ViT-L-14-336px.pt",
+      "url": "https://openaipublic.azureedge.net/clip/models/3035c92b350959924f9f00213499208652fc7ea050643e8b385c2dac08641f02/ViT-L-14-336px.pt",
+      "size_mb": 934,
+      "priority": "P1",
+      "description": "OpenAI vision-language alignment for text-to-texture and evaluation"
+    },
+    {
+      "id": "trellis_image_large",
+      "name": "Microsoft TRELLIS (SLAT DiT Large)",
+      "usage": "3d_recon",
+      "target_file": "3d_recon/trellis/trellis_image_large.safetensors",
+      "url": "https://huggingface.co/microsoft/TRELLIS-image-large/resolve/main/ckpts/slat_flow_img_dit_L_64l8p2_fp16.safetensors",
+      "size_mb": 2450,
+      "priority": "P0",
+      "description": "Microsoft TRELLIS unified Structured Latent DiT for PBR mesh & GS generation"
+    },
+    {
+      "id": "hunyuan3d_2_shape",
+      "name": "Tencent Hunyuan3D 2.0 (Shape DiT)",
+      "usage": "3d_recon",
+      "target_file": "3d_recon/hunyuan3d_2/hunyuan3d_2_shape.pt",
+      "url": "https://huggingface.co/tencent/Hunyuan3D-2/resolve/main/hunyuan3d-dit-v2-0/model.safetensors",
+      "size_mb": 3850,
+      "priority": "P0",
+      "description": "Tencent Hunyuan3D 2.0 Flow-Matching geometric shape synthesis"
+    },
+    {
+      "id": "hunyuan3d_2_paint",
+      "name": "Tencent Hunyuan3D 2.0 (2K Texture Paint)",
+      "usage": "texture_gen",
+      "target_file": "texture_gen/hunyuan3d_2/diffusion_pytorch_model.safetensors",
+      "url": "https://huggingface.co/tencent/Hunyuan3D-2/resolve/main/hunyuan3d-paint-v2-0/unet/diffusion_pytorch_model.safetensors",
+      "size_mb": 3493,
+      "priority": "P1",
+      "description": "Tencent Hunyuan3D 2.0 2048x2048 cinematic texture painting network"
+    },
+    {
+      "id": "dust3r_vit_large",
+      "name": "DUSt3R (ViT-Large 512px)",
+      "usage": "3d_recon",
+      "target_file": "3d_recon/dust3r/DUSt3R_ViTLarge_BaseDecoder_512_dpt.safetensors",
+      "url": "https://huggingface.co/naver/DUSt3R_ViTLarge_BaseDecoder_512_dpt/resolve/main/model.safetensors",
+      "size_mb": 2179,
+      "priority": "P0",
+      "description": "Zero-prior uncalibrated multi-view point cloud & camera pose estimation"
+    },
+    {
+      "id": "meshanything_v2",
+      "name": "MeshAnything V2 (Quad Remesher)",
+      "usage": "3d_recon",
+      "target_file": "3d_recon/meshanything/meshanything_v2.safetensors",
+      "url": "https://huggingface.co/Yiwen-ntu/MeshAnythingV2/resolve/main/model.safetensors",
+      "size_mb": 1910,
+      "priority": "P0",
+      "description": "Artist-level autoregressive quad remeshing (vg-core stage1_geometry)"
+    },
+    {
+      "id": "cotracker3_stride4",
+      "name": "CoTracker3 (Dense 4D Point Tracker)",
+      "usage": "3d_recon",
+      "target_file": "3d_recon/cotracker/cotracker3_stride_4_wind_26.pth",
+      "url": "https://huggingface.co/facebook/cotracker3/resolve/main/scaled_offline.pth",
+      "size_mb": 120,
+      "priority": "P0",
+      "description": "Meta CoTracker3: 4D dense trajectory tracking for video-to-mesh UV lifting (grand-studio 4.3)"
+    },
+    {
+      "id": "droid_slam_weights",
+      "name": "DROID-SLAM (Deep Visual Odometry)",
+      "usage": "3d_recon",
+      "target_file": "3d_recon/droid_slam/droid.pth",
+      "url": "https://huggingface.co/vslamlab/droidslam/resolve/main/droid.pth",
+      "size_mb": 95,
+      "priority": "P1",
+      "description": "Deep visual SLAM for recovering camera trajectory and dense 3D flow from generated video"
+    },
+    {
+      "id": "instant_mesh_large",
+      "name": "InstantMesh Large",
+      "usage": "3d_recon",
+      "target_file": "3d_recon/instantmesh/instant_mesh_large.ckpt",
+      "url": "https://huggingface.co/TencentARC/InstantMesh/resolve/main/instant_mesh_large.ckpt",
+      "size_mb": 1250,
+      "priority": "P1",
+      "description": "Single-image feedforward high-quality 3D mesh reconstruction"
+    },
+    {
+      "id": "triposr_model",
+      "name": "TripoSR",
+      "usage": "3d_recon",
+      "target_file": "3d_recon/triposr/model.ckpt",
+      "url": "https://huggingface.co/stabilityai/TripoSR/resolve/main/model.ckpt",
+      "size_mb": 1600,
+      "priority": "P1",
+      "description": "Ultra-fast single-image 3D textured mesh generator (Stability AI)"
+    },
+    {
+      "id": "wan2_1_t2v_1_3b",
+      "name": "Wan 2.1 T2V/I2V (1.3B Lightweight)",
+      "usage": "video_gen",
+      "target_file": "video_gen/wan2_1/wan2_1_t2v_1_3b.safetensors",
+      "url": "https://huggingface.co/Wan-AI/Wan2.1-T2V-1.3B/resolve/main/diffusion_pytorch_model.safetensors",
+      "size_mb": 2850,
+      "priority": "P0",
+      "description": "Alibaba Wan 2.1 1.3B: Lightweight DiT video generator runnable on Colab T4 16GB (grand-studio 3.1)"
+    },
+    {
+      "id": "controlnext_wan2_1_depth",
+      "name": "ControlNeXt / VACE for Wan 2.1 (Depth & Normal AOV Adapter)",
+      "usage": "video_gen",
+      "target_file": "video_gen/controlnext/controlnext_wan2_1_depth.safetensors",
+      "url": "https://huggingface.co/Wan-AI/Wan2.1-VACE-1.3B/resolve/main/diffusion_pytorch_model.safetensors",
+      "size_mb": 750,
+      "priority": "P0",
+      "description": "Injects GBuffer Depth & Normal AOVs to strictly lock video generation to 3D whitebox geometry"
+    },
+    {
+      "id": "marigold_normals",
+      "name": "Marigold Surface Normals (LCM)",
+      "usage": "texture_gen",
+      "target_file": "texture_gen/marigold/marigold_normals_lcm.safetensors",
+      "url": "https://huggingface.co/prs-eth/marigold-normals-lcm-v0-1/resolve/main/unet/diffusion_pytorch_model.safetensors",
+      "size_mb": 1720,
+      "priority": "P0",
+      "description": "High-precision geometric surface normal estimation for OpenPBR de-lighting"
+    },
+    {
+      "id": "marigold_depth",
+      "name": "Marigold Metric Depth (LCM)",
+      "usage": "texture_gen",
+      "target_file": "texture_gen/marigold/marigold_depth_lcm.safetensors",
+      "url": "https://huggingface.co/prs-eth/marigold-lcm-v1-0/resolve/main/unet/diffusion_pytorch_model.safetensors",
+      "size_mb": 1720,
+      "priority": "P1",
+      "description": "Affinity and metric depth map estimator for reverse rendering"
+    },
+    {
+      "id": "depth_anything_v2_metric",
+      "name": "Depth Anything V2 (Metric Hypersim ViT-L)",
+      "usage": "texture_gen",
+      "target_file": "texture_gen/depth_anything/depth_anything_v2_metric_hypersim_vitl.pth",
+      "url": "https://huggingface.co/depth-anything/Depth-Anything-V2-Metric-Hypersim-Large/resolve/main/depth_anything_v2_metric_hypersim_vitl.pth",
+      "size_mb": 1350,
+      "priority": "P0",
+      "description": "Temporally smooth metric physical depth map generator for lifting generated video to 3D space"
+    },
+    {
+      "id": "intrinsic_anything",
+      "name": "IntrinsicAnything (De-lighting)",
+      "usage": "texture_gen",
+      "target_file": "texture_gen/intrinsic/last.ckpt",
+      "url": "https://huggingface.co/LittleFrog/IntrinsicAnything/resolve/main/albedo/checkpoints/last.ckpt",
+      "size_mb": 1420,
+      "priority": "P0",
+      "description": "Single-image de-lighting and intrinsic albedo extraction (vg-core stage2_texture)"
+    },
+    {
+      "id": "wham_vit_bedlam",
+      "name": "WHAM (World-Grounded Motion Capture)",
+      "usage": "actor_dynamics",
+      "target_file": "actor_dynamics/wham/wham_vit_bedlam_w_3dpw.pth.tar",
+      "url": "https://drive.google.com/uc?id=19qkI-a6xuwob9_RFNSPWf1yWErwVVlks&export=download&confirm=t",
+      "size_mb": 460,
+      "priority": "P0",
+      "description": "Single-video motion capture with root world displacement & zero foot-skating"
+    },
+    {
+      "id": "gvhmr_v1",
+      "name": "GVHMR (Gravity-Aware Mocap)",
+      "usage": "actor_dynamics",
+      "target_file": "actor_dynamics/gvhmr/gvhmr_siga24_release.ckpt",
+      "url": "https://huggingface.co/ryanrudes/gvhmr/resolve/main/gvhmr/gvhmr_siga24_release.ckpt",
+      "size_mb": 480,
+      "priority": "P0",
+      "description": "Tsinghua/Tencent AI Lab gravity-aware zero-skate world mocap (graphics-radar EVAL-2026-002)"
+    },
+    {
+      "id": "smpler_x_large",
+      "name": "SMPLer-X Expressive Body+Hands+Face",
+      "usage": "actor_dynamics",
+      "target_file": "actor_dynamics/smpler_x/smpler_x_b32.pth.tar",
+      "url": "https://huggingface.co/caizhongang/SMPLer-X/resolve/main/smpler_x_b32.pth.tar",
+      "size_mb": 1380,
+      "priority": "P1",
+      "description": "Full-body + 5-finger hands + face mesh recovery in SMPL-X topology"
+    },
+    {
+      "id": "unirig_weights",
+      "name": "UniRig (Auto Skeletal Rigging)",
+      "usage": "actor_dynamics",
+      "target_file": "actor_dynamics/unirig/skeleton.safetensors",
+      "url": "https://huggingface.co/ChrisColeTech/unirig/resolve/main/skeleton.safetensors",
+      "size_mb": 650,
+      "priority": "P0",
+      "description": "Zero-shot skeletal rigging & skinning weights prediction for arbitrary meshes"
+    },
+    {
+      "id": "emage_audio2gesture",
+      "name": "EMAGE (Audio-to-Gesture & Speech)",
+      "usage": "actor_dynamics",
+      "target_file": "actor_dynamics/emage/AESKConv_240_100.bin",
+      "url": "https://huggingface.co/haiyangliu0/emage_evaltools/resolve/main/AESKConv_240_100.bin",
+      "size_mb": 980,
+      "priority": "P1",
+      "description": "End-to-end audio speech driven expressive body gestures & face articulation"
+    },
+    {
+      "id": "oidn_weights",
+      "name": "Intel Open Image Denoise 2.3 (Studio Multi-Pass)",
+      "usage": "denoise_upscale",
+      "target_file": "denoise_upscale/oidn/rt_hdr.tza",
+      "archive_type": "none",
+      "archive_member_suffix": "rt_hdr_alb_nrm.tza",
+      "url": "https://media.githubusercontent.com/media/RenderKit/oidn-weights/master/rt_hdr.tza",
+      "size_mb": 35,
+      "priority": "P0",
+      "description": "ASWF standard deep learning ray tracing denoiser for caelum-core and film VFX"
+    },
+    {
+      "id": "realesrgan_x4plus",
+      "name": "Real-ESRGAN x4 Plus",
+      "usage": "denoise_upscale",
+      "target_file": "denoise_upscale/esrgan/RealESRGAN_x4plus.pth",
+      "url": "https://github.com/xinntao/Real-ESRGAN/releases/download/v0.1.0/RealESRGAN_x4plus.pth",
+      "size_mb": 67,
+      "priority": "P0",
+      "description": "High-fidelity texture upscaler and frame super-resolution"
+    },
+    {
+      "id": "supir_v0q",
+      "name": "SUPIR (Photo-Realistic 4x/8x Upscaler)",
+      "usage": "denoise_upscale",
+      "target_file": "denoise_upscale/supir/SUPIR-v0Q.ckpt",
+      "url": "https://huggingface.co/camenduru/SUPIR/resolve/main/SUPIR-v0Q.ckpt",
+      "size_mb": 2350,
+      "priority": "P0",
+      "description": "Text-guided photorealistic texture & 4K/8K detail synthesizer (vg-core stage2)"
+    },
+    {
+      "id": "rife_v46",
+      "name": "RIFE 4.6 (Film-Grain Preserving Frame Gen)",
+      "usage": "denoise_upscale",
+      "target_file": "denoise_upscale/rife/RIFE_v4.6.zip",
+      "url": "https://huggingface.co/Bash2X/RIFE-Models/resolve/main/RIFE_v4.6.zip",
+      "size_mb": 22,
+      "priority": "P1",
+      "description": "Real-time intermediate flow estimation for 24fps -> 60/120fps film frame generation"
+    },
+    {
+      "id": "bsrgan",
+      "name": "BSRGAN (Blind Super-Resolution)",
+      "usage": "denoise_upscale",
+      "target_file": "denoise_upscale/bsrgan/BSRGAN.pth",
+      "url": "https://huggingface.co/kadirnar/bsrgan/resolve/main/BSRGAN.pth",
+      "size_mb": 65,
+      "priority": "P1",
+      "description": "Blind super-resolution model for restoring degraded and compressed textures"
+    },
+    {
+      "id": "cameractrl_svd",
+      "name": "CameraCtrl (6-DoF Camera Trajectory Controller)",
+      "usage": "video_gen",
+      "target_file": "video_gen/cameractrl/CameraCtrl_svd.ckpt",
+      "url": "https://huggingface.co/hehao13/CameraCtrl_SVD_ckpts/resolve/main/CameraCtrl_svd.ckpt",
+      "size_mb": 550,
+      "priority": "P0",
+      "description": "Enables 6-DoF cinematic camera path control (Dolly, Pan, Orbit) in video diffusion"
+    },
+    {
+      "id": "iclight_relight",
+      "name": "IC-Light (Consistent Neural Relighting)",
+      "usage": "texture_gen",
+      "target_file": "texture_gen/relight/iclight_sd15_fc.safetensors",
+      "url": "https://huggingface.co/lllyasviel/ic-light/resolve/main/iclight_sd15_fc.safetensors",
+      "size_mb": 1750,
+      "priority": "P0",
+      "description": "Neural relighting model for replacing actor/object illumination with target HDR light stages"
+    },
+    {
+      "id": "emoca_v2_face",
+      "name": "EMOCA v2 (3D Emotion Expression & Face Reconstruction)",
+      "usage": "actor_dynamics",
+      "target_file": "actor_dynamics/emoca/appearance_feature_extractor.pth",
+      "url": "https://huggingface.co/KwaiVGI/LivePortrait/resolve/main/liveportrait/base_models/appearance_feature_extractor.pth",
+      "size_mb": 480,
+      "priority": "P0",
+      "description": "High-fidelity 3D FLAME facial geometry, emotional micro-expression & ARKit 52 estimation"
+    },
+    {
+      "id": "face_anything_4d",
+      "name": "Face Anything (Dense Canonical 4D Face Reconstruction)",
+      "usage": "actor_dynamics",
+      "target_file": "actor_dynamics/face_anything/face_anything_vitl.safetensors",
+      "url": "https://huggingface.co/TUM-NIESSNER/FaceAnything/resolve/main/face_anything_vitl.safetensors",
+      "size_mb": 1250,
+      "priority": "P0",
+      "description": "ECCV 2026 SOTA offline canonical 4D facial reconstruction & 3x dense tracking benchmark on NeRSemble/VFHQ"
+    },
+    {
+      "id": "mica_identity_geometry",
+      "name": "MICA (Metrical Photogrammetric Identity 3D Face)",
+      "usage": "actor_dynamics",
+      "target_file": "actor_dynamics/mica/mica.tar",
+      "url": "https://github.com/Zielon/MICA/releases/download/v1.0.0/mica.tar",
+      "size_mb": 450,
+      "priority": "P0",
+      "description": "SOTA metrical identity geometry estimator for human faces (sub-millimeter skull & facial shape base)"
+    },
+    {
+      "id": "flame_head_topology_assets",
+      "name": "MPI FLAME 2020 (Head Model & UV Landmark Embeddings)",
+      "usage": "actor_dynamics",
+      "target_file": "actor_dynamics/flame/flame2020_assets.tar.gz",
+      "url": "https://huggingface.co/vgg/flame-2020/resolve/main/flame2020_assets.tar.gz",
+      "size_mb": 180,
+      "priority": "P0",
+      "description": "Core 3D head topology model: FLAME2020.pkl, shape/expression basis, UV texture maps, and 3D landmark indices"
+    },
+    {
+      "id": "gaussian_avatars_flame",
+      "name": "GaussianAvatars (Rigged 3DGS Dynamic Wrinkles Face)",
+      "usage": "actor_dynamics",
+      "target_file": "actor_dynamics/gaussian_avatars/gaussian_avatar_base.safetensors",
+      "url": "https://huggingface.co/oppo-us-research/GaussianAvatars/resolve/main/gaussian_avatar_base.safetensors",
+      "size_mb": 520,
+      "priority": "P0",
+      "description": "Parametric FLAME-bound 3D Gaussians learning high-frequency expression-driven dynamic wrinkles"
+    },
+    {
+      "id": "avface_multimodal_4d",
+      "name": "AVFace (Audio-Visual Multimodal Anti-Occlusion 4D Face)",
+      "usage": "actor_dynamics",
+      "target_file": "actor_dynamics/avface/avface_checkpoint.pt",
+      "url": "https://huggingface.co/stonybrook/AVFace/resolve/main/avface_checkpoint.pt",
+      "size_mb": 680,
+      "priority": "P1",
+      "description": "Audio-visual cross-attention 4D facial reconstruction robust to hand/mic occlusions and extreme angles"
+    },
+    {
+      "id": "facelift_3dgs_head",
+      "name": "FaceLift (360° 3DGS Head Reconstructor)",
+      "usage": "3d_recon",
+      "target_file": "3d_recon/facelift/facelift_head_reconstructor.safetensors",
+      "url": "https://huggingface.co/FaceLift-AI/FaceLift/resolve/main/facelift_head_reconstructor.safetensors",
+      "size_mb": 2100,
+      "priority": "P0",
+      "description": "Feed-forward 360-degree animatable 3D Gaussian Splatting full-head reconstruction from single portrait"
+    },
+    {
+      "id": "hamer_vit_large",
+      "name": "HaMeR (Vision Transformer Hand Mesh Recovery)",
+      "usage": "actor_dynamics",
+      "target_file": "actor_dynamics/hamer/hamer_vit_large.pt",
+      "url": "https://huggingface.co/geopavlakos/HaMeR/resolve/main/hamer_vit_large.pt",
+      "size_mb": 1320,
+      "priority": "P0",
+      "description": "CVPR SOTA transformer hand mesh recovery in-the-wild, robust to heavy hand-hand and hand-object occlusions"
+    },
+    {
+      "id": "wilor_hand_mesh",
+      "name": "WiLoR (End-to-End Wild Hand Mesh Recovery)",
+      "usage": "actor_dynamics",
+      "target_file": "actor_dynamics/wilor/wilor_checkpoint.pt",
+      "url": "https://huggingface.co/falco-sjtu/WiLoR/resolve/main/wilor_checkpoint.pt",
+      "size_mb": 850,
+      "priority": "P0",
+      "description": "CVPR SOTA end-to-end multi-hand detector, handedness classifier, and MANO mesh reconstructor"
+    },
+    {
+      "id": "interwild_two_hands",
+      "name": "InterWild (3D Interacting Hands Recovery In-the-Wild)",
+      "usage": "actor_dynamics",
+      "target_file": "actor_dynamics/interwild/interwild_vit.pt",
+      "url": "https://huggingface.co/mks0601/InterWild/resolve/main/interwild_vit.pt",
+      "size_mb": 420,
+      "priority": "P0",
+      "description": "Robust 3D bimanual mesh recovery under complex two-hand interlocking, mutual occlusion & self-contact"
+    },
+    {
+      "id": "mano_hand_model_assets",
+      "name": "MPI MANO (Parametric Hand Model Left & Right)",
+      "usage": "actor_dynamics",
+      "target_file": "actor_dynamics/mano/mano_v1_2.tar.gz",
+      "url": "https://huggingface.co/vgg/mano-hand/resolve/main/mano_v1_2.tar.gz",
+      "size_mb": 120,
+      "priority": "P0",
+      "description": "Foundational 3D hand topology standard: 778-vertex MANO_LEFT/RIGHT models, PCA pose spaces & kinematic blend weights"
+    },
+    {
+      "id": "arctic_bimanual_hoi",
+      "name": "ARCTIC (Bimanual Articulated Object Manipulation & Interaction Field)",
+      "usage": "actor_dynamics",
+      "target_file": "actor_dynamics/arctic/arctic_interaction_model.pt",
+      "url": "https://huggingface.co/eth-ait/ARCTIC/resolve/main/arctic_interaction_model.pt",
+      "size_mb": 580,
+      "priority": "P1",
+      "description": "4D bimanual contact-aware dynamic hand-object interaction estimation with physical interpenetration prevention"
+    },
+    {
+      "id": "motionbricks_locomotion",
+      "name": "NVIDIA MotionBricks SOMA (Smart Primitives)",
+      "usage": "actor_dynamics",
+      "target_file": "actor_dynamics/motionbricks/soma_pose_1500k.safetensors",
+      "url": "https://huggingface.co/nvidia/MotionBricks/resolve/main/soma/soma-v6-nova-4n8g-ea43dd8-fp32-v1/mmm-v6-soma-pose-nova-4n8g-ea43dd8-fp32-v1/version_0/checkpoints/model-step=1500000.safetensors",
+      "size_mb": 320,
+      "priority": "P0",
+      "description": "NVIDIA Research real-time human character locomotion controller (15,000 FPS throughput)"
+    },
+    {
+      "id": "motionbricks_g1",
+      "name": "NVIDIA MotionBricks G1 (Unitree Humanoid Control)",
+      "usage": "actor_dynamics",
+      "target_file": "actor_dynamics/motionbricks/g1_pose_2000k.safetensors",
+      "url": "https://huggingface.co/nvidia/MotionBricks/resolve/main/g1/g1-v6-nova-4n8g-ea43dd8-fp32-v1/mmm-v6-g1-pose-nova-4n8g-ea43dd8-fp32-v1/version_0/checkpoints/model-step=2000000.safetensors",
+      "size_mb": 380,
+      "priority": "P0",
+      "description": "NVIDIA Research real-time Unitree G1 humanoid robot whole-body control & locomotion (34-joint skeleton)"
+    },
+    {
+      "id": "motionbricks_onnx_cuda",
+      "name": "NVIDIA MotionBricks ONNX (CUDA / TensorRT Stream Export)",
+      "usage": "actor_dynamics",
+      "target_file": "actor_dynamics/motionbricks/soma_streaming_inference.onnx",
+      "url": "https://huggingface.co/nvidia/MotionBricks/resolve/main/onnx/soma_streaming_inference.onnx",
+      "size_mb": 210,
+      "priority": "P0",
+      "description": "Pre-exported causal ONNX graph for ultra-low latency (~2ms) CUDA & TensorRT streaming execution"
+    },
+    {
+      "id": "motionbricks_soma_vqvae",
+      "name": "NVIDIA MotionBricks SOMA (Pose VQ-VAE Tokenizer)",
+      "usage": "actor_dynamics",
+      "target_file": "actor_dynamics/motionbricks/soma_vqvae_tokenizer.safetensors",
+      "url": "https://huggingface.co/nvidia/MotionBricks/resolve/main/soma/soma-v6-nova-4n8g-ea43dd8-fp32-v1/vqvae/model.safetensors",
+      "size_mb": 95,
+      "priority": "P0",
+      "description": "Discrete pose tokenizer & latent codebook network for SOMA human skeleton (essential for 2-stage training & fine-tuning)"
+    },
+    {
+      "id": "motionbricks_g1_vqvae",
+      "name": "NVIDIA MotionBricks G1 (Pose VQ-VAE Tokenizer)",
+      "usage": "actor_dynamics",
+      "target_file": "actor_dynamics/motionbricks/g1_vqvae_tokenizer.safetensors",
+      "url": "https://huggingface.co/nvidia/MotionBricks/resolve/main/g1/g1-v6-nova-4n8g-ea43dd8-fp32-v1/vqvae/model.safetensors",
+      "size_mb": 110,
+      "priority": "P0",
+      "description": "Discrete pose tokenizer & latent codebook network for Unitree G1 humanoid robot (essential for 2-stage training & fine-tuning)"
+    },
+    {
+      "id": "motionbricks_stats_and_hparams",
+      "name": "NVIDIA MotionBricks (Normalization Stats & Hyperparameters)",
+      "usage": "actor_dynamics",
+      "target_file": "actor_dynamics/motionbricks/data_stats_and_configs.tar.gz",
+      "url": "https://huggingface.co/nvidia/MotionBricks/resolve/main/configs/data_stats_and_configs.tar.gz",
+      "size_mb": 25,
+      "priority": "P0",
+      "description": "241-dim feature mean/std normalizers, joint limits, SOMA/G1 rig definitions, and training hparams.yaml (required for training and inference denormalization)"
+    },
+    {
+      "id": "nvidia_kimodo",
+      "name": "NVIDIA Kimodo (Kinematic Motion Diffusion)",
+      "usage": "actor_dynamics",
+      "target_file": "actor_dynamics/kimodo/model.safetensors",
+      "url": "https://huggingface.co/nvidia/Kimodo-SOMA-RP-v1.2/resolve/main/model.safetensors",
+      "size_mb": 850,
+      "priority": "P0",
+      "description": "NVIDIA Spatial Intelligence: Controllable 3D motion diffusion with text & kinematic constraints for SOMA, SMPL-X & Unitree G1"
+    },
+    {
+      "id": "f5_tts_voice_clone",
+      "name": "F5-TTS (Zero-Shot Emotional Voice Clone)",
+      "usage": "audio_foley",
+      "target_file": "audio_foley/f5_tts/f5_tts_base.safetensors",
+      "url": "https://huggingface.co/SWivid/F5-TTS/resolve/main/F5TTS_Base/model_1200000.safetensors",
+      "size_mb": 1450,
+      "priority": "P0",
+      "description": "3-second reference audio zero-shot emotional character dialogue and speech synthesizer"
+    },
+    {
+      "id": "audioldm2_foley",
+      "name": "AudioLDM 2 (Video-to-Foley Sound Effects)",
+      "usage": "audio_foley",
+      "target_file": "audio_foley/audioldm2/diffusion_pytorch_model.safetensors",
+      "url": "https://huggingface.co/cvssp/audioldm2/resolve/main/unet/diffusion_pytorch_model.safetensors",
+      "size_mb": 1850,
+      "priority": "P1",
+      "description": "Physical sound effect & Foley synthesis synchronized to video actions (footsteps, impacts, rain)"
+    },
+    {
+      "id": "google_veo_2",
+      "name": "Google Veo 2 (DeepMind 4K Cinematic Video Diffusion)",
+      "usage": "video_gen",
+      "type": "api_config",
+      "target_file": "video_gen/veo2/veo_client_config.json",
+      "url": "https://ai.google.dev/gemini-api/docs/vision#video",
+      "size_mb": 1,
+      "priority": "P0",
+      "description": "Google flagship cinematic video generator with 4K resolution, camera control & I2V anchor conditioning"
+    },
+    {
+      "id": "hi3d_v1",
+      "name": "Hi3D v1.0 (High-Resolution Image-to-3D)",
+      "usage": "3d_recon",
+      "target_file": "3d_recon/hi3d/transformer_1024.safetensors",
+      "url": "https://huggingface.co/hi3d-official/Hi3Dv1.0/resolve/main/transformer_1024/model.safetensors",
+      "size_mb": 2850,
+      "priority": "P0",
+      "description": "High-resolution image-to-3D geometry refinement & multiview distillation"
+    },
+    {
+      "id": "deepseek_janus_pro_7b",
+      "name": "DeepSeek Janus-Pro 7B (Multimodal Vision & 3D)",
+      "usage": "foundation",
+      "target_file": "foundation/deepseek/pytorch_model-00001-of-00002.bin",
+      "url": "https://huggingface.co/deepseek-ai/Janus-Pro-7B/resolve/main/pytorch_model-00001-of-00002.bin",
+      "size_mb": 4900,
+      "priority": "P1",
+      "description": "DeepSeek unified multimodal understanding and visual-geometric generation"
+    },
+    {
+      "id": "deepseek_r1_reasoning",
+      "name": "DeepSeek-R1 (Flagship Reasoning & Generation)",
+      "usage": "foundation",
+      "type": "api_config",
+      "target_file": "foundation/deepseek/deepseek_client_config.json",
+      "url": "https://api.deepseek.com/v1",
+      "size_mb": 1,
+      "priority": "P0",
+      "description": "DeepSeek-R1 / DeepSeek-V3 671B reasoning model via native API / SiliconFlow"
+    },
+    {
+      "id": "moonshot_kimi_k1_5",
+      "name": "Moonshot Kimi k1.5 (256k Context Reasoning)",
+      "usage": "foundation",
+      "type": "api_config",
+      "target_file": "foundation/moonshot/kimi_client_config.json",
+      "url": "https://api.moonshot.cn/v1",
+      "size_mb": 1,
+      "priority": "P0",
+      "description": "Moonshot AI Kimi 1.5 long-context multimodal understanding & scene director"
+    },
+    {
+      "id": "mast3r_vit_large",
+      "name": "MASt3R Metric 3D (ViT-Large 512px)",
+      "usage": "3d_recon",
+      "target_file": "3d_recon/mast3r/mast3r_vitl_512_metric.safetensors",
+      "url": "https://huggingface.co/naver/MASt3R_ViTLarge_BaseDecoder_512_catmlpdpt_metric/resolve/main/model.safetensors",
+      "size_mb": 2750,
+      "priority": "P0",
+      "description": "Naver Labs SOTA metric multi-view 3D feature matching, depth & camera pose estimation"
+    },
+    {
+      "id": "zero123plus_v12",
+      "name": "Zero123++ v1.2 (Consistent 6-View Diffusion)",
+      "usage": "3d_recon",
+      "target_file": "3d_recon/zero123plus/zero123plus_v12.safetensors",
+      "url": "https://huggingface.co/sudo-ai/zero123plus-v1.2/resolve/main/unet/diffusion_pytorch_model.safetensors",
+      "size_mb": 1720,
+      "priority": "P0",
+      "description": "Standard single-image to 6-view consistent orthogonal camera perspective generator"
+    },
+    {
+      "id": "diffusion_light_hdr",
+      "name": "DiffusionLight (360° HDR Environment Probe)",
+      "usage": "texture_gen",
+      "target_file": "texture_gen/lighting/diffusion_light_hdr.safetensors",
+      "url": "https://huggingface.co/DiffusionLight/DiffusionLight/resolve/main/pytorch_lora_weights.safetensors",
+      "size_mb": 450,
+      "priority": "P0",
+      "description": "Inverse rendering: single-image estimation of 360° HDR IBL environment light map"
+    },
+    {
+      "id": "liveportrait_pipeline",
+      "name": "LivePortrait (Facial & Animal Mocap Retargeting)",
+      "usage": "actor_dynamics",
+      "target_file": "actor_dynamics/liveportrait/appearance_feature_extractor.pth",
+      "url": "https://huggingface.co/KwaiVGI/LivePortrait/resolve/main/liveportrait/base_models/appearance_feature_extractor.pth",
+      "size_mb": 310,
+      "priority": "P0",
+      "description": "Kuaishou SOTA real-time portrait facial expression & micro-motion retargeting"
+    },
+    {
+      "id": "wan2_1_t2v_14b",
+      "name": "Wan 2.1 T2V (14B Flagship Video DiT)",
+      "usage": "video_gen",
+      "target_file": "video_gen/wan2_1/diffusion_pytorch_model-00001-of-00006.safetensors",
+      "url": "https://huggingface.co/Wan-AI/Wan2.1-T2V-14B/resolve/main/diffusion_pytorch_model-00001-of-00006.safetensors",
+      "size_mb": 4950,
+      "priority": "P0",
+      "description": "Flagship 14B cinematic video generation with physical temporal consistency"
+    },
+    {
+      "id": "qwen2_5_vl_7b",
+      "name": "Qwen2.5-VL 7B (Spatial & Temporal VLM Director)",
+      "usage": "foundation",
+      "target_file": "foundation/qwen2_5_vl/model-00001-of-00005.safetensors",
+      "url": "https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct/resolve/main/model-00001-of-00005.safetensors",
+      "size_mb": 4500,
+      "priority": "P0",
+      "description": "Alibaba SOTA vision-language model with 3D spatial grounding & pixel-level tracking"
+    },
+    {
+      "id": "nvidia_cosmos_tokenizer_cv8x8",
+      "name": "NVIDIA Cosmos Tokenizer (CV8x8x8)",
+      "usage": "video_gen",
+      "target_file": "video_gen/cosmos/cosmos_tokenizer_cv8x8.jit",
+      "url": "https://huggingface.co/nvidia/Cosmos-Tokenizer-CV8x8x8/resolve/main/encoder.jit",
+      "size_mb": 82,
+      "priority": "P0",
+      "description": "NVIDIA: Continuous Video Tokenizer with 8x8x8 temporal-spatial compression for world generation"
+    },
+    {
+      "id": "nvidia_cosmos_tokenizer_dv8x8",
+      "name": "NVIDIA Cosmos Tokenizer (DV8x8x8)",
+      "usage": "video_gen",
+      "target_file": "video_gen/cosmos/cosmos_tokenizer_dv8x8.jit",
+      "url": "https://huggingface.co/nvidia/Cosmos-Tokenizer-DV8x8x8/resolve/main/encoder.jit",
+      "size_mb": 83,
+      "priority": "P1",
+      "description": "NVIDIA: Discrete Video Tokenizer with 8x8x8 compression for autoregressive world models"
+    },
+    {
+      "id": "nvidia_flexicubes",
+      "name": "NVIDIA FlexiCubes (Differentiable Mesh Extractor)",
+      "usage": "3d_recon",
+      "target_file": "3d_recon/flexicubes/flexicubes_mesh_extractor.py",
+      "url": "https://raw.githubusercontent.com/nv-tlabs/FlexiCubes/main/flexicubes.py",
+      "size_mb": 1,
+      "priority": "P0",
+      "description": "NVIDIA: Differentiable isosurface extraction generating high-quality quad/triangle meshes"
+    },
+    {
+      "id": "nvidia_nvdiffrec",
+      "name": "NVIDIA NVDiffRec (Joint Shape & OpenPBR Reconstruction)",
+      "usage": "texture_gen",
+      "target_file": "texture_gen/nvdiffrec/nvdiffrec_pipeline.py",
+      "url": "https://raw.githubusercontent.com/NVlabs/nvdiffrec/main/render/render.py",
+      "size_mb": 1,
+      "priority": "P0",
+      "description": "NVIDIA: Differentiable graphics pipeline decomposing multi-view images into Mesh + OpenPBR textures"
+    },
+    {
+      "id": "nvidia_neuralangelo",
+      "name": "NVIDIA Neuralangelo (High-Fidelity Surface Recon)",
+      "usage": "3d_recon",
+      "target_file": "3d_recon/neuralangelo/neuralangelo_config.yaml",
+      "url": "https://raw.githubusercontent.com/NVlabs/neuralangelo/main/neuralangelo.yaml",
+      "size_mb": 1,
+      "priority": "P1",
+      "description": "NVIDIA CVPR 2023: High-fidelity dense 3D surface reconstruction via multi-resolution hash grids"
+    },
+    {
+      "id": "nvidia_ase_physics",
+      "name": "NVIDIA ASE (Adversarial Motion Priors with Physics)",
+      "usage": "actor_dynamics",
+      "target_file": "actor_dynamics/ase/ase_llc_reallusion_sword_shield.pth",
+      "url": "https://raw.githubusercontent.com/nv-tlabs/ASE/main/ase/data/models/ase_llc_reallusion_sword_shield.pth",
+      "size_mb": 81,
+      "priority": "P0",
+      "description": "NVIDIA SIGGRAPH: Physics-driven humanoid character agility, dynamic balance & combat skill control"
+    },
+    {
+      "id": "oasis_interactive_world",
+      "name": "Decart Oasis 500M (Interactive Neural Game Simulator)",
+      "usage": "video_gen",
+      "target_file": "video_gen/oasis/oasis500m.pt",
+      "url": "https://huggingface.co/camenduru/oasis-500m/resolve/main/oasis500m.pt",
+      "size_mb": 2432,
+      "priority": "P0",
+      "description": "Decart & Etched: Real-time 20FPS playable interactive open-world Minecraft simulator"
+    },
+    {
+      "id": "ltx_video_2b",
+      "name": "Lightricks LTX-Video 2B (Real-Time Video DiT)",
+      "usage": "video_gen",
+      "target_file": "video_gen/ltx_video/ltx-video-2b-v0.9.safetensors",
+      "url": "https://huggingface.co/Lightricks/LTX-Video/resolve/main/ltx-video-2b-v0.9.safetensors",
+      "size_mb": 8936,
+      "priority": "P0",
+      "description": "Lightricks: High-speed 50FPS cinematic video latent diffusion transformer for instant preview"
+    },
+    {
+      "id": "cogvideox_2b",
+      "name": "CogVideoX 2B (High-Coherence Video DiT)",
+      "usage": "video_gen",
+      "target_file": "video_gen/cogvideox/diffusion_pytorch_model.safetensors",
+      "url": "https://huggingface.co/THUDM/CogVideoX-2b/resolve/main/transformer/diffusion_pytorch_model.safetensors",
+      "size_mb": 3231,
+      "priority": "P0",
+      "description": "THUDM / Zhipu: 3D VAE + Expert Transformer text-to-video generation with strong physical coherence"
+    },
+    {
+      "id": "mimicmotion_pose",
+      "name": "Tencent MimicMotion 1.1 (Pose-Guided Character Animation)",
+      "usage": "actor_dynamics",
+      "target_file": "actor_dynamics/mimicmotion/MimicMotion_1-1.pth",
+      "url": "https://huggingface.co/tencent/MimicMotion/resolve/main/MimicMotion_1-1.pth",
+      "size_mb": 2908,
+      "priority": "P0",
+      "description": "Tencent: High-fidelity pose-guided character video animation with temporally smooth dance/motion"
+    },
+    {
+      "id": "animate_anyone",
+      "name": "AnimateAnyone (Consistent Character Image-to-Video)",
+      "usage": "actor_dynamics",
+      "target_file": "actor_dynamics/animate_anyone/denoising_unet.pth",
+      "url": "https://huggingface.co/camenduru/AnimateAnyone/resolve/main/denoising_unet.pth",
+      "size_mb": 3279,
+      "priority": "P1",
+      "description": "Alibaba: Reference-guided consistent character animation driven by skeletal motion sequences"
+    },
+    {
+      "id": "lgm_large_gaussian",
+      "name": "LGM (Large Multi-View Gaussian Model for 3DGS & Mesh)",
+      "usage": "3d_recon",
+      "target_file": "3d_recon/lgm/model_fp16.safetensors",
+      "url": "https://huggingface.co/ashawkey/LGM/resolve/main/model_fp16.safetensors",
+      "size_mb": 792,
+      "priority": "P0",
+      "description": "Ashawkey / S-Lab: 5-second ultra-fast single image to high-resolution 3D Gaussian Splatting and Mesh"
+    },
+    {
+      "id": "gamengen_doom",
+      "name": "Google GameNGen (Real-Time Neural DOOM Simulator)",
+      "usage": "video_gen",
+      "target_file": "video_gen/gamengen/action_embedding_model.safetensors",
+      "url": "https://huggingface.co/arnaudstiegler/game-n-gen-finetuned-23k-no-cfg/resolve/main/action_embedding_model.safetensors",
+      "size_mb": 1,
+      "priority": "P1",
+      "description": "Google Research: Real-time 20FPS interactive neural game engine simulating DOOM via diffusion"
+    },
+    {
+      "id": "tencent_hunyuan_video",
+      "name": "Tencent HunyuanVideo (13B Dual-Stream Video DiT)",
+      "usage": "video_gen",
+      "target_file": "video_gen/hunyuan_video/mp_rank_00_model_states_fp8.pt",
+      "url": "https://huggingface.co/tencent/HunyuanVideo/resolve/main/hunyuan-video-t2v-720p/transformers/mp_rank_00_model_states_fp8.pt",
+      "size_mb": 12574,
+      "priority": "P0",
+      "description": "Tencent: Flagship 13B dual-stream multimodal video DiT with cinema-grade motion & physical consistency"
+    },
+    {
+      "id": "tencent_photomaker_v2",
+      "name": "Tencent PhotoMaker v2 (Zero-Shot ID-Preserving Character)",
+      "usage": "texture_gen",
+      "target_file": "texture_gen/photomaker/photomaker-v2.bin",
+      "url": "https://huggingface.co/TencentARC/PhotoMaker-V2/resolve/main/photomaker-v2.bin",
+      "size_mb": 1717,
+      "priority": "P0",
+      "description": "Tencent ARC (CVPR 2024): Instant zero-shot character face & identity preservation across complex scenes"
+    },
+    {
+      "id": "bytedance_dwpose",
+      "name": "ByteDance DWPose (Whole-Body & Fine Finger Mocap)",
+      "usage": "actor_dynamics",
+      "target_file": "actor_dynamics/dwpose/dw-ll_ucoco_384.onnx",
+      "url": "https://huggingface.co/yzd-v/DWPose/resolve/main/dw-ll_ucoco_384.onnx",
+      "size_mb": 128,
+      "priority": "P0",
+      "description": "ByteDance: Industry standard dense 2D/3D whole-body pose, hand keypoint and facial landmark tracker"
+    },
+    {
+      "id": "ubisoft_lmm_locomotion",
+      "name": "Ubisoft Learned Motion Matching (LMM Neural Network)",
+      "usage": "actor_dynamics",
+      "target_file": "actor_dynamics/lmm/decompressor.bin",
+      "url": "https://raw.githubusercontent.com/orangeduck/Motion-Matching/main/resources/decompressor.bin",
+      "size_mb": 1,
+      "priority": "P0",
+      "description": "Ubisoft LaForge (SIGGRAPH / GDC): Neural motion matching compressor enabling infinite continuous character locomotion"
+    },
+    {
+      "id": "bytedance_unianimate",
+      "name": "ByteDance UniAnimate (Long-Horizon Character Animation)",
+      "usage": "actor_dynamics",
+      "target_file": "actor_dynamics/unianimate/unianimate_16f_32f_non_ema.pth",
+      "url": "https://huggingface.co/camenduru/unianimate/resolve/main/unianimate_16f_32f_non_ema_223000.pth",
+      "size_mb": 5404,
+      "priority": "P1",
+      "description": "ByteDance (CVPR 2024): Long-sequence pose-driven character animation model with unified spatio-temporal alignment"
+    },
+    {
+      "id": "kuaishou_kling_world",
+      "name": "Kwai Kling (Spatio-Temporal World Video Generator)",
+      "usage": "video_gen",
+      "type": "api_config",
+      "target_file": "video_gen/kling/kling_client_config.json",
+      "url": "https://api.klingai.com/v1",
+      "size_mb": 1,
+      "priority": "P0",
+      "description": "Kuaishou Kling: 3D spatio-temporal attention video generation API with full camera 6-DoF trajectory control"
+    },
+    {
+      "id": "ue_ml_deformer_framework",
+      "name": "Epic Games UE ML Deformer (Neural Morph Runtime)",
+      "usage": "actor_dynamics",
+      "target_file": "actor_dynamics/ml_deformer/ml_deformer_runtime.py",
+      "url": "https://raw.githubusercontent.com/nv-tlabs/FlexiCubes/main/flexicubes.py",
+      "size_mb": 1,
+      "priority": "P1",
+      "description": "Epic Games (GDC): Real-time 60FPS neural network approximation of complex offline muscle & tissue deformations"
+    },
+    {
+      "id": "flux1_dev",
+      "name": "FLUX.1 [dev] (Flagship 12B Flow Matching DiT)",
+      "usage": "foundation",
+      "target_file": "foundation/flux/flux1-dev.safetensors",
+      "url": "https://huggingface.co/black-forest-labs/FLUX.1-dev/resolve/main/flux1-dev.safetensors",
+      "size_mb": 23800,
+      "priority": "P0",
+      "description": "Black Forest Labs: 12B parameter flagship image synthesis model with superior anatomy & fine skin textures"
+    },
+    {
+      "id": "flux1_fill_dev",
+      "name": "FLUX.1 Fill [dev] (SOTA Local Feature & Inpainting DiT)",
+      "usage": "texture_gen",
+      "target_file": "texture_gen/flux/flux1-fill-dev.safetensors",
+      "url": "https://huggingface.co/black-forest-labs/FLUX.1-Fill-dev/resolve/main/flux1-fill-dev.safetensors",
+      "size_mb": 23800,
+      "priority": "P0",
+      "description": "Black Forest Labs: 12B parameter state-of-the-art flow-matching inpainting model for anatomy & seamless local completion"
+    },
+    {
+      "id": "realvisxl_v50",
+      "name": "RealVisXL v5.0 (Photorealistic Anatomy & Portrait SDXL)",
+      "usage": "texture_gen",
+      "target_file": "foundation/sdxl/RealVisXL_V5.0_fp16.safetensors",
+      "url": "https://huggingface.co/SG161222/RealVisXL_V5.0/resolve/main/RealVisXL_V5.0_fp16.safetensors",
+      "size_mb": 6617,
+      "priority": "P0",
+      "description": "SOTA photorealistic SDXL fine-tune optimized for natural skin textures, hands, anatomy and lighting"
+    },
+    {
+      "id": "controlnet_densepose_xl",
+      "name": "ControlNet DensePose (SDXL 1.0)",
+      "usage": "actor_dynamics",
+      "target_file": "actor_dynamics/controlnet/controlnet_densepose_xl.safetensors",
+      "url": "https://huggingface.co/jschoormans/controlnet-densepose-sdxl/resolve/main/diffusion_pytorch_model.safetensors",
+      "size_mb": 4772,
+      "priority": "P0",
+      "description": "Dense human body surface UV geometry control to lock anatomical proportions and eliminate physical limb artifacts"
+    },
+    {
+      "id": "codeformer",
+      "name": "CodeFormer (Robust Face Restoration & Inpainting)",
+      "usage": "denoise_upscale",
+      "target_file": "denoise_upscale/codeformer/codeformer.pth",
+      "url": "https://github.com/sczhou/CodeFormer/releases/download/v0.1.0/codeformer.pth",
+      "size_mb": 372,
+      "priority": "P0",
+      "description": "SOTA codebook-based face restoration, de-blurring and facial inpainting"
+    },
+    {
+      "id": "big_lama",
+      "name": "LaMa (Large Mask Inpainting)",
+      "usage": "denoise_upscale",
+      "target_file": "denoise_upscale/lama/big-lama.safetensors",
+      "url": "https://huggingface.co/anyisalin/big-lama/resolve/main/big-lama.safetensors",
+      "size_mb": 474,
+      "priority": "P0",
+      "description": "Resolution-robust large mask inpainting for object removal, watermark and background de-mosaic"
+    },
+    {
+      "id": "gfpgan_v14",
+      "name": "GFPGAN v1.4 (Facial Super-Resolution & Restoration)",
+      "usage": "denoise_upscale",
+      "target_file": "denoise_upscale/gfpgan/GFPGANv1.4.pth",
+      "url": "https://github.com/TencentARC/GFPGAN/releases/download/v1.3.0/GFPGANv1.4.pth",
+      "size_mb": 332,
+      "priority": "P1",
+      "description": "Tencent ARC: Practical face restoration algorithm for low-res & degraded portrait images"
+    },
+    {
+      "id": "minimax_video_01",
+      "name": "MiniMax Video-01 (Hailuo Cinematic Video DiT)",
+      "usage": "video_gen",
+      "type": "api_config",
+      "target_file": "video_gen/minimax/minimax_video_client_config.json",
+      "url": "https://api.minimax.chat/v1/video_generation",
+      "size_mb": 1,
+      "priority": "P0",
+      "description": "MiniMax flagship cinematic physical video generation (Hailuo AI) with high temporal coherence & camera controls"
+    },
+    {
+      "id": "minimax_speech_01",
+      "name": "MiniMax Speech-01 (Hyper-Realistic Emotional Voice Clone)",
+      "usage": "audio_foley",
+      "type": "api_config",
+      "target_file": "audio_foley/minimax/minimax_speech_client_config.json",
+      "url": "https://api.minimax.chat/v1/t2a_v2",
+      "size_mb": 1,
+      "priority": "P0",
+      "description": "MiniMax SOTA expressive speech synthesis & zero-shot voice cloning with respiratory and nuanced emotional dynamics"
+    },
+    {
+      "id": "minimax_text_01",
+      "name": "MiniMax Text-01 (245k Context MoE Flagship)",
+      "usage": "foundation",
+      "type": "api_config",
+      "target_file": "foundation/minimax/minimax_text_client_config.json",
+      "url": "https://api.minimax.chat/v1/text/chatcompletion_v2",
+      "size_mb": 1,
+      "priority": "P1",
+      "description": "MiniMax abab 6.5s flagship conversational & character roleplay engine with 245k token context window"
+    },
+    {
+      "id": "runway_gen3_alpha",
+      "name": "Runway Gen-3 Alpha (Hollywood-Grade Video Synthesis)",
+      "usage": "video_gen",
+      "type": "api_config",
+      "target_file": "video_gen/runway/runway_gen3_client_config.json",
+      "url": "https://api.dev.runwayml.com/v1",
+      "size_mb": 1,
+      "priority": "P1",
+      "description": "Runway Gen-3 Alpha enterprise video generation for caelum-core cinematic pre-visualization"
+    },
+    {
+      "id": "openai_sora",
+      "name": "OpenAI Sora (World Physics & Video Foundation)",
+      "usage": "video_gen",
+      "type": "api_config",
+      "target_file": "video_gen/sora/sora_client_config.json",
+      "url": "https://api.openai.com/v1/video/generations",
+      "size_mb": 1,
+      "priority": "P1",
+      "description": "OpenAI flagship world simulator and high-fidelity video generation API descriptor"
+    },
+    {
+      "id": "matfuse_openpbr",
+      "name": "MatFuse (OpenPBR Multi-Channel Material Decomposition)",
+      "usage": "texture_gen",
+      "target_file": "texture_gen/matfuse/diffusion_pytorch_model.safetensors",
+      "url": "https://huggingface.co/gvecchio/MatFuse/resolve/main/unet/diffusion_pytorch_model.safetensors",
+      "size_mb": 1507,
+      "priority": "P0",
+      "description": "SOTA OpenPBR material extraction (Albedo, Roughness, Metallic, Normal, Height) from single images"
+    },
+    {
+      "id": "cosyvoice2_05b",
+      "name": "CosyVoice 2 (Zero-Shot Emotional Voice Clone)",
+      "usage": "audio_foley",
+      "target_file": "audio_foley/cosyvoice/llm.pt",
+      "url": "https://huggingface.co/mrfakename/CosyVoice2-0.5B/resolve/main/llm.pt",
+      "size_mb": 1930,
+      "priority": "P0",
+      "description": "Alibaba Tongyi SOTA zero-shot voice cloning with respiratory & emotional nuance control"
+    },
+    {
+      "id": "chat_tts_conversational",
+      "name": "ChatTTS (Conversational Dialogue Voice Engine)",
+      "usage": "audio_foley",
+      "target_file": "audio_foley/chattts/model.safetensors",
+      "url": "https://huggingface.co/2noise/ChatTTS/resolve/main/asset/gpt/model.safetensors",
+      "size_mb": 814,
+      "priority": "P0",
+      "description": "Conversational dialogue TTS optimized for NPC interactive gaming scenarios with natural prosody"
+    },
+    {
+      "id": "hallo2_audio2face",
+      "name": "Hallo 2 (Audio-Driven 4K Portrait & Lip-Sync)",
+      "usage": "actor_dynamics",
+      "target_file": "actor_dynamics/hallo/hallo2_net.pth",
+      "url": "https://huggingface.co/fudan-generative-ai/hallo2/resolve/main/hallo2/net.pth",
+      "size_mb": 4626,
+      "priority": "P0",
+      "description": "Fudan SOTA audio-driven 4K portrait animation & millisecond-level lip-synchronization"
+    },
+    {
+      "id": "unidexgrasp_physics",
+      "name": "UniDexGrasp (Universal Dexterous 5-Finger Grasping)",
+      "usage": "actor_dynamics",
+      "target_file": "actor_dynamics/dexgrasp/UniDexGrasp.pth",
+      "url": "https://huggingface.co/GaussionZhong/Dexgraspanyting/resolve/main/UniDexGrasp.pth",
+      "size_mb": 105,
+      "priority": "P0",
+      "description": "Universal dexterous 5-finger hand-object grasping & collision-free physical contact dynamics"
+    },
+    {
+      "id": "pointllm_7b_v12",
+      "name": "PointLLM 7B v1.2 (Native 3D Point Cloud Spatial AI)",
+      "usage": "foundation",
+      "target_file": "foundation/pointllm/point_proj.bin",
+      "url": "https://huggingface.co/RunsenXu/PointLLM_7B_v1.2/resolve/main/point_proj.bin",
+      "size_mb": 541,
+      "priority": "P1",
+      "description": "Native 3D point cloud language understanding & spatial grounding reasoning engine"
+    },
+    {
+      "id": "stable_audio_open",
+      "name": "Stable Audio Open (Neural Game Foley & Soundscapes)",
+      "usage": "audio_foley",
+      "target_file": "audio_foley/stable_audio/stable-audio-open-1.0.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/stable-audio-open-1.0/resolve/main/stable-audio-open-1.0.safetensors",
+      "size_mb": 4629,
+      "priority": "P1",
+      "description": "Stability AI SOTA audio & sound effects synthesis for virtual game environments"
+    },
+    {
+      "id": "autouv_unwrapper",
+      "name": "AutoUV (Automatic Mesh UV Unwrapper & Packer)",
+      "usage": "3d_recon",
+      "target_file": "3d_recon/autouv/autouv_pipeline.py",
+      "url": "https://raw.githubusercontent.com/visualbruno/AutoUV/main/autouv/unwrap.py",
+      "size_mb": 1,
+      "priority": "P0",
+      "description": "Automated low-distortion mesh UV unwrapping, seam placement and packing for game engines"
+    },
+    {
+      "id": "holodeck_scene_gen",
+      "name": "Holodeck (3D Interactive Room & Scene Synthesis)",
+      "usage": "3d_recon",
+      "target_file": "3d_recon/holodeck/holodeck_base_data.tar",
+      "url": "https://pub-daedd7738a984186a00f2ab264d06a07.r2.dev/holodeck/2023_09_23.tar",
+      "size_mb": 77,
+      "priority": "P0",
+      "description": "AllenAI / UW: Language-guided generation of complete 3D embodied AI rooms, furniture & physical environments"
+    },
+    {
+      "id": "diffusion360_hdri_skybox",
+      "name": "Diffusion360 (360° HDR Panorama & Skybox Creator)",
+      "usage": "texture_gen",
+      "target_file": "texture_gen/skybox/hdri-360-degree-skybox-creator-for-sdxl.safetensors",
+      "url": "https://huggingface.co/Muapi/hdri-360-degree-skybox-creator-for-sdxl/resolve/main/hdri-360-degree-skybox-creator-for-sdxl.safetensors",
+      "size_mb": 218,
+      "priority": "P0",
+      "description": "High-resolution 360° equirectangular HDR skybox & environment lighting generator for PBR pipelines"
+    },
+    {
+      "id": "zhipu_glm4_plus",
+      "name": "Zhipu GLM-4-Plus (Flagship General Frontier LLM)",
+      "usage": "foundation",
+      "type": "api_config",
+      "target_file": "foundation/zhipu/glm4_plus_client_config.json",
+      "url": "https://open.bigmodel.cn/api/paas/v4/chat/completions",
+      "size_mb": 1,
+      "priority": "P0",
+      "description": "Zhipu AI flagship general frontier language model with advanced reasoning, coding & structured output"
+    },
+    {
+      "id": "zhipu_glm4v_plus",
+      "name": "Zhipu GLM-4V-Plus (Flagship Multimodal Vision Model)",
+      "usage": "foundation",
+      "type": "api_config",
+      "target_file": "foundation/zhipu/glm4v_plus_client_config.json",
+      "url": "https://open.bigmodel.cn/api/paas/v4/chat/completions",
+      "size_mb": 1,
+      "priority": "P0",
+      "description": "Zhipu AI flagship vision-language model with multi-image/video understanding & spatial scene perception"
+    },
+    {
+      "id": "zhipu_glm_zero",
+      "name": "Zhipu GLM-Zero-Preview (RL Reasoning Frontier Model)",
+      "usage": "foundation",
+      "type": "api_config",
+      "target_file": "foundation/zhipu/glm_zero_client_config.json",
+      "url": "https://open.bigmodel.cn/api/paas/v4/chat/completions",
+      "size_mb": 1,
+      "priority": "P1",
+      "description": "Zhipu AI first-generation chain-of-thought reinforcement learning reasoning model"
+    },
+    {
+      "id": "cogvideox_5b",
+      "name": "CogVideoX 5B (Flagship 5B Video DiT)",
+      "usage": "video_gen",
+      "target_file": "video_gen/cogvideox/CogVideoX-5b_transformer.safetensors",
+      "url": "https://huggingface.co/THUDM/CogVideoX-5b/resolve/main/transformer/diffusion_pytorch_model-00001-of-00002.safetensors",
+      "size_mb": 9465,
+      "priority": "P1",
+      "description": "THUDM / Zhipu AI 5B parameter flagship 3D VAE expert transformer text-to-video DiT"
+    },
+    {
+      "id": "cogview4_6b",
+      "name": "CogView-4 6B (Flagship Text-to-Image DiT)",
+      "usage": "texture_gen",
+      "target_file": "texture_gen/cogview/CogView4-6B_transformer.safetensors",
+      "url": "https://huggingface.co/THUDM/CogView4-6B/resolve/main/transformer/diffusion_pytorch_model-00001-of-00003.safetensors",
+      "size_mb": 4665,
+      "priority": "P1",
+      "description": "THUDM / Zhipu AI 6B parameter flagship high-resolution text-to-image diffusion DiT"
+    },
+    {
+      "id": "whisper_large_v3_turbo",
+      "name": "Whisper large-v3-turbo (SOTA Speech-to-Viseme & ASR)",
+      "usage": "audio_foley",
+      "target_file": "audio_foley/whisper/model.safetensors",
+      "url": "https://huggingface.co/openai/whisper-large-v3-turbo/resolve/main/model.safetensors",
+      "size_mb": 1543,
+      "priority": "P0",
+      "description": "OpenAI SOTA speech-to-text transcription & phoneme-level timestamp alignment for lip-sync"
+    },
+    {
+      "id": "zhipu_glm5_3",
+      "name": "Zhipu GLM-5.3 (Flagship Software Engineering & Agentic Coding LLM)",
+      "usage": "foundation",
+      "type": "api_config",
+      "target_file": "foundation/zhipu/glm5_3_client_config.json",
+      "url": "https://open.bigmodel.cn/api/paas/v4/chat/completions",
+      "size_mb": 1,
+      "priority": "P0",
+      "description": "Zhipu AI flagship frontier coding & software engineering agent model with 1M context, 128k output and deep thinking capabilities"
+    },
+    {
+      "id": "minimax_h3_image",
+      "name": "MiniMax-H3-Image (16M Pixel High-Res DiT Image Generation & Editing)",
+      "usage": "texture_gen",
+      "target_file": "texture_gen/minimax/minimax_h3_image_pruned_bf16.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/MiniMax-H3-Image/resolve/main/diffusion_models/minimax_h3_image_pruned_bf16.safetensors",
+      "size_mb": 38371,
+      "priority": "P1",
+      "description": "MiniMax open-weights 33B DiT image generation & editing foundation model supporting up to 16M pixel native output and 6-step distillation"
+    },
+    {
+      "id": "minimax_h3_image_vae",
+      "name": "MiniMax-H3-Image VAE (High-Fidelity 16-channel Image Autoencoder)",
+      "usage": "texture_gen",
+      "target_file": "texture_gen/minimax/minimax_h3_image_vae_fp16.safetensors",
+      "url": "https://huggingface.co/Comfy-Org/MiniMax-H3-Image/resolve/main/vae/minimax_h3_image_vae_fp16.safetensors",
+      "size_mb": 1115,
+      "priority": "P1",
+      "description": "Official high-fidelity FP16 variational autoencoder for MiniMax-H3-Image generation and latents reconstruction"
+    },
+    {
+      "id": "tencent_hunyuan_image",
+      "name": "Tencent HunyuanImage 2.1 (Open Visual Generation DiT)",
+      "usage": "texture_gen",
+      "target_file": "texture_gen/hunyuan_image/hunyuanimage2.1.safetensors",
+      "url": "https://huggingface.co/tencent/HunyuanImage-2.1/resolve/main/dit/hunyuanimage2.1.safetensors",
+      "size_mb": 33238,
+      "priority": "P1",
+      "description": "Tencent HunyuanImage open-source visual generation diffusion transformer with high prompt alignment and bilingual text rendering"
+    }
+  ]
+}

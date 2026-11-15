@@ -1,0 +1,11 @@
+{
+  "frame_count": 96,
+  "intrinsics": {
+    "fx": 1050.0,
+    "fy": 1050.0,
+    "cx": 960.0,
+    "cy": 540.0
+  },
+  "camera_motion": "Dolly_In_With_Orbit",
+  "average_reprojection_error_px": 0.42
+}

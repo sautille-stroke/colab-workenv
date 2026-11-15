@@ -1,0 +1,27 @@
+{
+  "version": "1.0.0",
+  "description": "Google Ultra 20x Account API Pool (Gemini 2.0 / Imagen 3 / Google AI Studio)",
+  "instruction": "Fill your 20 Google Ultra API keys below, or set environment variable GOOGLE_ULTRA_KEYS=key1,key2,...",
+  "accounts": [
+    {"id": "ultra_01", "label": "Ultra-Worker-01", "api_key": "PASTE_API_KEY_HERE"},
+    {"id": "ultra_02", "label": "Ultra-Worker-02", "api_key": "PASTE_API_KEY_HERE"},
+    {"id": "ultra_03", "label": "Ultra-Worker-03", "api_key": "PASTE_API_KEY_HERE"},
+    {"id": "ultra_04", "label": "Ultra-Worker-04", "api_key": "PASTE_API_KEY_HERE"},
+    {"id": "ultra_05", "label": "Ultra-Worker-05", "api_key": "PASTE_API_KEY_HERE"},
+    {"id": "ultra_06", "label": "Ultra-Worker-06", "api_key": "PASTE_API_KEY_HERE"},
+    {"id": "ultra_07", "label": "Ultra-Worker-07", "api_key": "PASTE_API_KEY_HERE"},
+    {"id": "ultra_08", "label": "Ultra-Worker-08", "api_key": "PASTE_API_KEY_HERE"},
+    {"id": "ultra_09", "label": "Ultra-Worker-09", "api_key": "PASTE_API_KEY_HERE"},
+    {"id": "ultra_10", "label": "Ultra-Worker-10", "api_key": "PASTE_API_KEY_HERE"},
+    {"id": "ultra_11", "label": "Ultra-Worker-11", "api_key": "PASTE_API_KEY_HERE"},
+    {"id": "ultra_12", "label": "Ultra-Worker-12", "api_key": "PASTE_API_KEY_HERE"},
+    {"id": "ultra_13", "label": "Ultra-Worker-13", "api_key": "PASTE_API_KEY_HERE"},
+    {"id": "ultra_14", "label": "Ultra-Worker-14", "api_key": "PASTE_API_KEY_HERE"},
+    {"id": "ultra_15", "label": "Ultra-Worker-15", "api_key": "PASTE_API_KEY_HERE"},
+    {"id": "ultra_16", "label": "Ultra-Worker-16", "api_key": "PASTE_API_KEY_HERE"},
+    {"id": "ultra_17", "label": "Ultra-Worker-17", "api_key": "PASTE_API_KEY_HERE"},
+    {"id": "ultra_18", "label": "Ultra-Worker-18", "api_key": "PASTE_API_KEY_HERE"},
+    {"id": "ultra_19", "label": "Ultra-Worker-19", "api_key": "PASTE_API_KEY_HERE"},
+    {"id": "ultra_20", "label": "Ultra-Worker-20", "api_key": "PASTE_API_KEY_HERE"}
+  ]
+}

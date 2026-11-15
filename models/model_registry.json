@@ -1,0 +1,376 @@
+{
+  "version": "1.1.0",
+  "storage_root": "/content/drive/MyDrive/dervgen",
+  "models": [
+    {
+      "id": "sam2_large",
+      "name": "Segment Anything 2 (Hiera-Large)",
+      "usage": "foundation",
+      "target_file": "foundation/sam2/sam2_hiera_large.pt",
+      "url": "https://dl.fbaipublicfiles.com/segment_anything_2/072824/sam2_hiera_large.pt",
+      "size_mb": 898,
+      "priority": "P0",
+      "description": "Meta SAM 2 video & 3D foreground mask segmentation"
+    },
+    {
+      "id": "sam2_base_plus",
+      "name": "Segment Anything 2 (Hiera-Base-Plus)",
+      "usage": "foundation",
+      "target_file": "foundation/sam2/sam2_hiera_base_plus.pt",
+      "url": "https://dl.fbaipublicfiles.com/segment_anything_2/072824/sam2_hiera_base_plus.pt",
+      "size_mb": 323,
+      "priority": "P1",
+      "description": "Lightweight SAM 2 for fast real-time mask tracking"
+    },
+    {
+      "id": "dinov2_vits14",
+      "name": "DINOv2 Small (ViT-S/14)",
+      "usage": "foundation",
+      "target_file": "foundation/dinov2/dinov2_vits14_pretrain.pth",
+      "url": "https://dl.fbaipublicfiles.com/dinov2/dinov2_vits14/dinov2_vits14_pretrain.pth",
+      "size_mb": 88,
+      "priority": "P0",
+      "description": "Dense vision feature extractor for point correspondence & semantic matching"
+    },
+    {
+      "id": "dinov2_vitl14",
+      "name": "DINOv2 Large (ViT-L/14)",
+      "usage": "foundation",
+      "target_file": "foundation/dinov2/dinov2_vitl14_pretrain.pth",
+      "url": "https://dl.fbaipublicfiles.com/dinov2/dinov2_vitl14/dinov2_vitl14_pretrain.pth",
+      "size_mb": 1145,
+      "priority": "P1",
+      "description": "High-capacity dense feature extractor for fine-grained 3D reconstruction"
+    },
+    {
+      "id": "clip_vit_l14",
+      "name": "CLIP (ViT-L/14@336px)",
+      "usage": "foundation",
+      "target_file": "foundation/clip/ViT-L-14-336px.pt",
+      "url": "https://openaipublic.azureedge.net/clip/models/303514a08b3e532ed796036cdd272e4b3fea1f4200c78a21395235ac37b0abb6/ViT-L-14-336px.pt",
+      "size_mb": 934,
+      "priority": "P1",
+      "description": "OpenAI vision-language alignment head for text-to-texture and evaluation"
+    },
+    {
+      "id": "dust3r_vit_large",
+      "name": "DUSt3R (ViT-Large 512px)",
+      "usage": "3d_recon",
+      "target_file": "3d_recon/dust3r/DUSt3R_ViTLarge_BaseDecoder_512_dpt.pth",
+      "url": "https://download.europe.naverlabs.com/dust3r/DUSt3R_ViTLarge_BaseDecoder_512_dpt.pth",
+      "size_mb": 1180,
+      "priority": "P0",
+      "description": "Zero-prior uncalibrated multi-view point cloud & camera pose estimation"
+    },
+    {
+      "id": "meshanything_v2",
+      "name": "MeshAnything V2 (Quad Remesher)",
+      "usage": "3d_recon",
+      "target_file": "3d_recon/meshanything/meshanything_v2.pth",
+      "url": "https://huggingface.co/buaacyw/MeshAnythingV2/resolve/main/meshanything_v2.pth",
+      "size_mb": 1850,
+      "priority": "P0",
+      "description": "Artist-level autoregressive quad remeshing (vg-core stage1_geometry)"
+    },
+    {
+      "id": "instant_mesh_large",
+      "name": "InstantMesh Large",
+      "usage": "3d_recon",
+      "target_file": "3d_recon/instantmesh/instant_mesh_large.ckpt",
+      "url": "https://huggingface.co/TencentARC/InstantMesh/resolve/main/instant_mesh_large.ckpt",
+      "size_mb": 1250,
+      "priority": "P1",
+      "description": "Single-image feedforward high-quality 3D mesh reconstruction"
+    },
+    {
+      "id": "triposr_model",
+      "name": "TripoSR",
+      "usage": "3d_recon",
+      "target_file": "3d_recon/triposr/model.ckpt",
+      "url": "https://huggingface.co/stabilityai/TripoSR/resolve/main/model.ckpt",
+      "size_mb": 1600,
+      "priority": "P1",
+      "description": "Ultra-fast single-image 3D textured mesh generator (Stability AI)"
+    },
+    {
+      "id": "marigold_normals",
+      "name": "Marigold Surface Normals (LCM)",
+      "usage": "texture_gen",
+      "target_file": "texture_gen/marigold/marigold_normals_lcm.safetensors",
+      "url": "https://huggingface.co/prs-eth/marigold-normals-lcm-v1-0/resolve/main/unet/diffusion_pytorch_model.safetensors",
+      "size_mb": 1720,
+      "priority": "P0",
+      "description": "High-precision geometric surface normal estimation for OpenPBR de-lighting"
+    },
+    {
+      "id": "marigold_depth",
+      "name": "Marigold Metric Depth (LCM)",
+      "usage": "texture_gen",
+      "target_file": "texture_gen/marigold/marigold_depth_lcm.safetensors",
+      "url": "https://huggingface.co/prs-eth/marigold-lcm-v1-0/resolve/main/unet/diffusion_pytorch_model.safetensors",
+      "size_mb": 1720,
+      "priority": "P1",
+      "description": "Affinity and metric depth map estimator for reverse rendering"
+    },
+    {
+      "id": "realesrgan_x4plus",
+      "name": "Real-ESRGAN x4 Plus",
+      "usage": "denoise_upscale",
+      "target_file": "denoise_upscale/esrgan/RealESRGAN_x4plus.pth",
+      "url": "https://github.com/xinntao/Real-ESRGAN/releases/download/v0.1.0/RealESRGAN_x4plus.pth",
+      "size_mb": 67,
+      "priority": "P0",
+      "description": "High-fidelity texture upscaler and frame super-resolution"
+    },
+    {
+      "id": "nvidia_kimodo",
+      "name": "NVIDIA Kimodo (Kinematic Motion Diffusion)",
+      "usage": "actor_dynamics",
+      "target_file": "actor_dynamics/kimodo/kimodo_soma_rp_v1_2.pt",
+      "url": "https://huggingface.co/nvidia/Kimodo-SOMA-RP-v1.2/resolve/main/kimodo_soma_rp_v1.2.pt",
+      "size_mb": 850,
+      "priority": "P0",
+      "description": "NVIDIA Spatial Intelligence: Controllable 3D motion diffusion with text & kinematic constraints for SOMA, SMPL-X & Unitree G1"
+    },
+    {
+      "id": "flux1_dev",
+      "name": "FLUX.1 [dev] (Flagship 12B Flow Matching DiT)",
+      "usage": "foundation",
+      "target_file": "foundation/flux/flux1-dev.safetensors",
+      "url": "https://huggingface.co/black-forest-labs/FLUX.1-dev/resolve/main/flux1-dev.safetensors",
+      "size_mb": 23800,
+      "priority": "P0",
+      "description": "Black Forest Labs: 12B parameter flagship image synthesis model with superior anatomy & fine skin textures"
+    },
+    {
+      "id": "flux1_fill_dev",
+      "name": "FLUX.1 Fill [dev] (SOTA Local Feature & Inpainting DiT)",
+      "usage": "texture_gen",
+      "target_file": "texture_gen/flux/flux1-fill-dev.safetensors",
+      "url": "https://huggingface.co/black-forest-labs/FLUX.1-Fill-dev/resolve/main/flux1-fill-dev.safetensors",
+      "size_mb": 23800,
+      "priority": "P0",
+      "description": "Black Forest Labs: 12B parameter state-of-the-art flow-matching inpainting model for anatomy & seamless local completion"
+    },
+    {
+      "id": "realvisxl_v50",
+      "name": "RealVisXL v5.0 (Photorealistic Anatomy & Portrait SDXL)",
+      "usage": "texture_gen",
+      "target_file": "texture_gen/sdxl/RealVisXL_V5.0.safetensors",
+      "url": "https://huggingface.co/SG161222/RealVisXL_V5.0/resolve/main/RealVisXL_V5.0.safetensors",
+      "size_mb": 6460,
+      "priority": "P0",
+      "description": "SOTA photorealistic SDXL fine-tune optimized for natural skin textures, hands, anatomy and lighting"
+    },
+    {
+      "id": "controlnet_densepose_xl",
+      "name": "ControlNet DensePose (SDXL 1.0)",
+      "usage": "actor_dynamics",
+      "target_file": "actor_dynamics/controlnet/controlnet_densepose_xl.safetensors",
+      "url": "https://huggingface.co/xinsir/controlnet-densepose-sdxl-1.0/resolve/main/diffusion_pytorch_model.safetensors",
+      "size_mb": 2500,
+      "priority": "P0",
+      "description": "Dense human body surface UV geometry control to lock anatomical proportions and eliminate physical limb artifacts"
+    },
+    {
+      "id": "codeformer",
+      "name": "CodeFormer (Robust Face Restoration & Inpainting)",
+      "usage": "denoise_upscale",
+      "target_file": "denoise_upscale/codeformer/codeformer.pth",
+      "url": "https://github.com/sczhou/CodeFormer/releases/download/v0.1.0/codeformer.pth",
+      "size_mb": 372,
+      "priority": "P0",
+      "description": "SOTA codebook-based face restoration, de-blurring and facial inpainting"
+    },
+    {
+      "id": "big_lama",
+      "name": "LaMa (Large Mask Inpainting)",
+      "usage": "denoise_upscale",
+      "target_file": "denoise_upscale/lama/big-lama.pt",
+      "url": "https://huggingface.co/anyisalin/big-lama/resolve/main/big-lama.pt",
+      "size_mb": 196,
+      "priority": "P0",
+      "description": "Resolution-robust large mask inpainting for object removal, watermark and background de-mosaic"
+    },
+    {
+      "id": "gfpgan_v14",
+      "name": "GFPGAN v1.4 (Facial Super-Resolution & Restoration)",
+      "usage": "denoise_upscale",
+      "target_file": "denoise_upscale/gfpgan/GFPGANv1.4.pth",
+      "url": "https://github.com/TencentARC/GFPGAN/releases/download/v1.3.0/GFPGANv1.4.pth",
+      "size_mb": 332,
+      "priority": "P1",
+      "description": "Tencent ARC: Practical face restoration algorithm for low-res & degraded portrait images"
+    },
+    {
+      "id": "motionbricks_locomotion",
+      "name": "NVIDIA MotionBricks SOMA (Smart Primitives)",
+      "usage": "actor_dynamics",
+      "target_file": "actor_dynamics/motionbricks/soma_pose_1500k.safetensors",
+      "url": "https://huggingface.co/nvidia/MotionBricks/resolve/main/soma/soma-v6-nova-4n8g-ea43dd8-fp32-v1/mmm-v6-soma-pose-nova-4n8g-ea43dd8-fp32-v1/version_0/checkpoints/model-step=1500000.safetensors",
+      "size_mb": 320,
+      "priority": "P0",
+      "description": "NVIDIA Research real-time human character locomotion controller (15,000 FPS throughput)"
+    },
+    {
+      "id": "motionbricks_g1",
+      "name": "NVIDIA MotionBricks G1 (Unitree Humanoid Control)",
+      "usage": "actor_dynamics",
+      "target_file": "actor_dynamics/motionbricks/g1_pose_2000k.safetensors",
+      "url": "https://huggingface.co/nvidia/MotionBricks/resolve/main/g1/g1-v6-nova-4n8g-ea43dd8-fp32-v1/mmm-v6-g1-pose-nova-4n8g-ea43dd8-fp32-v1/version_0/checkpoints/model-step=2000000.safetensors",
+      "size_mb": 380,
+      "priority": "P0",
+      "description": "NVIDIA Research real-time Unitree G1 humanoid robot whole-body control & locomotion (34-joint skeleton)"
+    },
+    {
+      "id": "motionbricks_onnx_cuda",
+      "name": "NVIDIA MotionBricks ONNX (CUDA / TensorRT Stream Export)",
+      "usage": "actor_dynamics",
+      "target_file": "actor_dynamics/motionbricks/soma_streaming_inference.onnx",
+      "url": "https://huggingface.co/nvidia/MotionBricks/resolve/main/onnx/soma_streaming_inference.onnx",
+      "size_mb": 210,
+      "priority": "P0",
+      "description": "Pre-exported causal ONNX graph for ultra-low latency (~2ms) CUDA & TensorRT streaming execution"
+    },
+    {
+      "id": "motionbricks_soma_vqvae",
+      "name": "NVIDIA MotionBricks SOMA (Pose VQ-VAE Tokenizer)",
+      "usage": "actor_dynamics",
+      "target_file": "actor_dynamics/motionbricks/soma_vqvae_tokenizer.safetensors",
+      "url": "https://huggingface.co/nvidia/MotionBricks/resolve/main/soma/soma-v6-nova-4n8g-ea43dd8-fp32-v1/vqvae/model.safetensors",
+      "size_mb": 95,
+      "priority": "P0",
+      "description": "Discrete pose tokenizer & latent codebook network for SOMA human skeleton (essential for 2-stage training & fine-tuning)"
+    },
+    {
+      "id": "motionbricks_g1_vqvae",
+      "name": "NVIDIA MotionBricks G1 (Pose VQ-VAE Tokenizer)",
+      "usage": "actor_dynamics",
+      "target_file": "actor_dynamics/motionbricks/g1_vqvae_tokenizer.safetensors",
+      "url": "https://huggingface.co/nvidia/MotionBricks/resolve/main/g1/g1-v6-nova-4n8g-ea43dd8-fp32-v1/vqvae/model.safetensors",
+      "size_mb": 110,
+      "priority": "P0",
+      "description": "Discrete pose tokenizer & latent codebook network for Unitree G1 humanoid robot (essential for 2-stage training & fine-tuning)"
+    },
+    {
+      "id": "motionbricks_stats_and_hparams",
+      "name": "NVIDIA MotionBricks (Normalization Stats & Hyperparameters)",
+      "usage": "actor_dynamics",
+      "target_file": "actor_dynamics/motionbricks/data_stats_and_configs.tar.gz",
+      "url": "https://huggingface.co/nvidia/MotionBricks/resolve/main/configs/data_stats_and_configs.tar.gz",
+      "size_mb": 25,
+      "priority": "P0",
+      "description": "241-dim feature mean/std normalizers, joint limits, SOMA/G1 rig definitions, and training hparams.yaml (required for training and inference denormalization)"
+    },
+    {
+      "id": "face_anything_4d",
+      "name": "Face Anything (Dense Canonical 4D Face Reconstruction)",
+      "usage": "actor_dynamics",
+      "target_file": "actor_dynamics/face_anything/face_anything_vitl.safetensors",
+      "url": "https://huggingface.co/TUM-NIESSNER/FaceAnything/resolve/main/face_anything_vitl.safetensors",
+      "size_mb": 1250,
+      "priority": "P0",
+      "description": "ECCV 2026 SOTA offline canonical 4D facial reconstruction & 3x dense tracking benchmark on NeRSemble/VFHQ"
+    },
+    {
+      "id": "mica_identity_geometry",
+      "name": "MICA (Metrical Photogrammetric Identity 3D Face)",
+      "usage": "actor_dynamics",
+      "target_file": "actor_dynamics/mica/mica.tar",
+      "url": "https://github.com/Zielon/MICA/releases/download/v1.0.0/mica.tar",
+      "size_mb": 450,
+      "priority": "P0",
+      "description": "SOTA metrical identity geometry estimator for human faces (sub-millimeter skull & facial shape base)"
+    },
+    {
+      "id": "flame_head_topology_assets",
+      "name": "MPI FLAME 2020 (Head Model & UV Landmark Embeddings)",
+      "usage": "actor_dynamics",
+      "target_file": "actor_dynamics/flame/flame2020_assets.tar.gz",
+      "url": "https://huggingface.co/vgg/flame-2020/resolve/main/flame2020_assets.tar.gz",
+      "size_mb": 180,
+      "priority": "P0",
+      "description": "Core 3D head topology model: FLAME2020.pkl, shape/expression basis, UV texture maps, and 3D landmark indices"
+    },
+    {
+      "id": "gaussian_avatars_flame",
+      "name": "GaussianAvatars (Rigged 3DGS Dynamic Wrinkles Face)",
+      "usage": "actor_dynamics",
+      "target_file": "actor_dynamics/gaussian_avatars/gaussian_avatar_base.safetensors",
+      "url": "https://huggingface.co/oppo-us-research/GaussianAvatars/resolve/main/gaussian_avatar_base.safetensors",
+      "size_mb": 520,
+      "priority": "P0",
+      "description": "Parametric FLAME-bound 3D Gaussians learning high-frequency expression-driven dynamic wrinkles"
+    },
+    {
+      "id": "avface_multimodal_4d",
+      "name": "AVFace (Audio-Visual Multimodal Anti-Occlusion 4D Face)",
+      "usage": "actor_dynamics",
+      "target_file": "actor_dynamics/avface/avface_checkpoint.pt",
+      "url": "https://huggingface.co/stonybrook/AVFace/resolve/main/avface_checkpoint.pt",
+      "size_mb": 680,
+      "priority": "P1",
+      "description": "Audio-visual cross-attention 4D facial reconstruction robust to hand/mic occlusions and extreme angles"
+    },
+    {
+      "id": "facelift_3dgs_head",
+      "name": "FaceLift (360° 3DGS Head Reconstructor)",
+      "usage": "3d_recon",
+      "target_file": "3d_recon/facelift/facelift_head_reconstructor.safetensors",
+      "url": "https://huggingface.co/FaceLift-AI/FaceLift/resolve/main/facelift_head_reconstructor.safetensors",
+      "size_mb": 2100,
+      "priority": "P0",
+      "description": "Feed-forward 360-degree animatable 3D Gaussian Splatting full-head reconstruction from single portrait"
+    },
+    {
+      "id": "hamer_vit_large",
+      "name": "HaMeR (Vision Transformer Hand Mesh Recovery)",
+      "usage": "actor_dynamics",
+      "target_file": "actor_dynamics/hamer/hamer_vit_large.pt",
+      "url": "https://huggingface.co/geopavlakos/HaMeR/resolve/main/hamer_vit_large.pt",
+      "size_mb": 1320,
+      "priority": "P0",
+      "description": "CVPR SOTA transformer hand mesh recovery in-the-wild, robust to heavy hand-hand and hand-object occlusions"
+    },
+    {
+      "id": "wilor_hand_mesh",
+      "name": "WiLoR (End-to-End Wild Hand Mesh Recovery)",
+      "usage": "actor_dynamics",
+      "target_file": "actor_dynamics/wilor/wilor_checkpoint.pt",
+      "url": "https://huggingface.co/falco-sjtu/WiLoR/resolve/main/wilor_checkpoint.pt",
+      "size_mb": 850,
+      "priority": "P0",
+      "description": "CVPR SOTA end-to-end multi-hand detector, handedness classifier, and MANO mesh reconstructor"
+    },
+    {
+      "id": "interwild_two_hands",
+      "name": "InterWild (3D Interacting Hands Recovery In-the-Wild)",
+      "usage": "actor_dynamics",
+      "target_file": "actor_dynamics/interwild/interwild_vit.pt",
+      "url": "https://huggingface.co/mks0601/InterWild/resolve/main/interwild_vit.pt",
+      "size_mb": 420,
+      "priority": "P0",
+      "description": "Robust 3D bimanual mesh recovery under complex two-hand interlocking, mutual occlusion & self-contact"
+    },
+    {
+      "id": "mano_hand_model_assets",
+      "name": "MPI MANO (Parametric Hand Model Left & Right)",
+      "usage": "actor_dynamics",
+      "target_file": "actor_dynamics/mano/mano_v1_2.tar.gz",
+      "url": "https://huggingface.co/vgg/mano-hand/resolve/main/mano_v1_2.tar.gz",
+      "size_mb": 120,
+      "priority": "P0",
+      "description": "Foundational 3D hand topology standard: 778-vertex MANO_LEFT/RIGHT models, PCA pose spaces & kinematic blend weights"
+    },
+    {
+      "id": "arctic_bimanual_hoi",
+      "name": "ARCTIC (Bimanual Articulated Object Manipulation & Interaction Field)",
+      "usage": "actor_dynamics",
+      "target_file": "actor_dynamics/arctic/arctic_interaction_model.pt",
+      "url": "https://huggingface.co/eth-ait/ARCTIC/resolve/main/arctic_interaction_model.pt",
+      "size_mb": 580,
+      "priority": "P1",
+      "description": "4D bimanual contact-aware dynamic hand-object interaction estimation with physical interpenetration prevention"
+    }
+  ]
+}

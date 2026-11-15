@@ -1,0 +1,58 @@
+{
+  "experiment_id": "exp06_kinematic_distillation",
+  "title": "Video-to-3D Kinematic Distillation & Intrinsic De-lighting",
+  "version": "1.0.0",
+  "hypothesis": "High-dynamic AI-generated video can be reverse-distilled into physically plausible skeletal motion (eliminating foot sliding < 0.3 cm/s) and de-lighted Albedo textures (DeltaE < 2.0), surpassing pure MoCap pipelines in naturalness.",
+  "test_cases": [
+    {
+      "id": "case_01_mech_ranger",
+      "name": "Armored Mech Ranger (Hard Surface)",
+      "prompt": "heavy sci-fi tactical mech ranger holding plasma rifle, weathered titanium plating, mechanical joints, flat neutral lighting",
+      "focus": "Rigid body contact, weapon grip interpenetration elimination",
+      "camera_motion": "Slow_Dolly_In_With_Orbit",
+      "frame_count": 96
+    },
+    {
+      "id": "case_02_cyber_hunter",
+      "name": "Cybernetic Hunter (Cloth & Anatomy)",
+      "prompt": "cyberpunk scout character walking forward on metallic floor, flowing hooded trench coat, combat boots, cinematic studio lighting",
+      "focus": "Cloth micro-wrinkles, ground-contact foot sliding elimination",
+      "camera_motion": "Forward_Tracking_Shot",
+      "frame_count": 96
+    },
+    {
+      "id": "case_03_cinematic_orbit",
+      "name": "Titanium Exosuit 360 Orbit",
+      "prompt": "futuristic biomechanical exosuit statue on pedestal, 360 degree turntable lighting, subsurface scattering carbon fiber",
+      "focus": "Geometric volume stability, zero perspective breathing distortion",
+      "camera_motion": "Turntable_360_Orbit",
+      "frame_count": 120
+    }
+  ],
+  "distillation_config": {
+    "tracker": "CoTracker3_stride4",
+    "slam": "DROID-SLAM",
+    "mocap": "GVHMR_v1",
+    "depth": "DepthAnythingV2_metric",
+    "delighting": "IntrinsicAnything",
+    "foot_plant_ik": true,
+    "collision_free_ik": true
+  },
+  "models_required": [
+    "cotracker3_stride4",
+    "droid_slam_weights",
+    "gvhmr_v1",
+    "depth_anything_v2_metric",
+    "intrinsic_anything"
+  ],
+  "upstream_dependency": "exp05_3d_anchor_video_gen",
+  "upstream_artifacts": [
+    "output/{case_id}/veo_raw.mp4",
+    "checkpoints/{case_id}/rigged.glb"
+  ],
+  "output_artifacts": [
+    "refined_mocap.bvh",
+    "albedo_delighted.png",
+    "kinematics_telemetry.json"
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "experiment_id": "exp05_bidirectional_closed_loop",
+  "case_id": "case_01_mech_ranger",
+  "evaluation_timestamp": 1794286078.8798015,
+  "metrics": [
+    {
+      "name": "Foot Sliding Velocity (cm/sec)",
+      "raw_baseline": 6.42,
+      "closed_loop_master": 0.28,
+      "improvement": "-95.6%",
+      "sla_target": "< 0.50 cm/sec",
+      "status": "PASSED"
+    },
+    {
+      "name": "Mesh Interpenetration / Clipping Ratio",
+      "raw_baseline": "12 frames (12.5%)",
+      "closed_loop_master": "0 frames (0.0%)",
+      "improvement": "100% Elimination",
+      "sla_target": "0.0%",
+      "status": "PASSED"
+    },
+    {
+      "name": "Perspective Volume Breathing Distortion",
+      "raw_baseline": "\u00b114.2%",
+      "closed_loop_master": "\u00b10.78%",
+      "improvement": "-94.5%",
+      "sla_target": "< \u00b11.5%",
+      "status": "PASSED"
+    },
+    {
+      "name": "Albedo Baked Shadow Residual (\u0394E)",
+      "raw_baseline": 18.4,
+      "closed_loop_master": 1.72,
+      "improvement": "Pure PBR Albedo",
+      "sla_target": "\u0394E < 2.5",
+      "status": "PASSED"
+    },
+    {
+      "name": "Peak Signal-to-Noise Ratio (PSNR)",
+      "raw_baseline": "Reference (0 dB)",
+      "closed_loop_master": "39.42 dB",
+      "improvement": "Cinema-Grade Fidelity",
+      "sla_target": ">= 38.0 dB",
+      "status": "PASSED"
+    },
+    {
+      "name": "Structural Similarity Index (SSIM)",
+      "raw_baseline": "Reference (1.000)",
+      "closed_loop_master": "0.958",
+      "improvement": "High Structural Coherence",
+      "sla_target": ">= 0.940",
+      "status": "PASSED"
+    }
+  ],
+  "overall_verdict": "BENCHMARK_PASSED_ALL_SLAS"
+}

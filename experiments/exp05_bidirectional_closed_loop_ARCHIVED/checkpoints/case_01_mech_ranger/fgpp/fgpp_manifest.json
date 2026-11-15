@@ -1,0 +1,11 @@
+{
+  "engine": "Fulgur / Caelum-Core C++20",
+  "frame_count": 96,
+  "channels": [
+    "CameraLinearDepth.exr",
+    "WorldNormal.exr",
+    "MotionVector.exr",
+    "Cryptomatte.exr"
+  ],
+  "total_bake_time_sec": 36.5
+}

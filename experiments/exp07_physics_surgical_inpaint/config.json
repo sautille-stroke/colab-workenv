@@ -1,0 +1,79 @@
+{
+  "experiment_id": "exp07_physics_surgical_inpaint",
+  "title": "Physics-Guided Surgical Inpainting: FGPP Tensor-Driven Defect Elimination",
+  "version": "1.0.0",
+  "hypothesis": "C++ physical tensors (FGPP LinearDepth + WorldNormal + MotionVector) guiding localized surgical inpainting via ControlNeXt can eliminate 100% of mesh interpenetration while preserving >= 38 dB PSNR of the original cinematic lighting.",
+  "test_cases": [
+    {
+      "id": "case_01_mech_ranger",
+      "name": "Armored Mech Ranger (Hard Surface)",
+      "prompt": "heavy sci-fi tactical mech ranger holding plasma rifle, weathered titanium plating, mechanical joints, flat neutral lighting",
+      "focus": "Rigid body contact, weapon grip interpenetration elimination",
+      "camera_motion": "Slow_Dolly_In_With_Orbit",
+      "frame_count": 96
+    },
+    {
+      "id": "case_02_cyber_hunter",
+      "name": "Cybernetic Hunter (Cloth & Anatomy)",
+      "prompt": "cyberpunk scout character walking forward on metallic floor, flowing hooded trench coat, combat boots, cinematic studio lighting",
+      "focus": "Cloth micro-wrinkles, ground-contact foot sliding elimination",
+      "camera_motion": "Forward_Tracking_Shot",
+      "frame_count": 96
+    },
+    {
+      "id": "case_03_cinematic_orbit",
+      "name": "Titanium Exosuit 360 Orbit",
+      "prompt": "futuristic biomechanical exosuit statue on pedestal, 360 degree turntable lighting, subsurface scattering carbon fiber",
+      "focus": "Geometric volume stability, zero perspective breathing distortion",
+      "camera_motion": "Turntable_360_Orbit",
+      "frame_count": 120
+    }
+  ],
+  "fgpp_config": {
+    "renderer": "fulgur_headless",
+    "mode": "fgpp_guide",
+    "aov_outputs": [
+      "CameraLinearDepth",
+      "WorldNormal",
+      "MotionVector",
+      "Cryptomatte"
+    ],
+    "target_ms_per_frame": 400
+  },
+  "critic_config": {
+    "vlm_model": "Google_Ultra_20x",
+    "mask_tracker": "SAM2",
+    "dilation_radius_px": 8
+  },
+  "inpaint_config": {
+    "method": "ControlNeXt",
+    "border_blend_ring_px": 16,
+    "temporal_latent_blend": true,
+    "color_space": "ACEScg"
+  },
+  "metrics_thresholds": {
+    "max_foot_sliding_cm_per_sec": 0.5,
+    "max_clipping_frame_ratio": 0.0,
+    "max_volume_breathing_ratio": 0.015,
+    "min_psnr_db": 38.0,
+    "min_ssim": 0.94,
+    "max_delighted_albedo_delta_e": 2.5
+  },
+  "models_required": [
+    "oidn_weights"
+  ],
+  "upstream_dependency": [
+    "exp05_3d_anchor_video_gen",
+    "exp06_kinematic_distillation"
+  ],
+  "upstream_artifacts": [
+    "exp05:output/{case_id}/veo_raw.mp4",
+    "exp05:checkpoints/{case_id}/rigged.glb",
+    "exp06:checkpoints/{case_id}/refined_mocap.bvh"
+  ],
+  "output_artifacts": [
+    "fgpp/*.exr",
+    "surgical_masks/mask_NNNN.png",
+    "final_master_cinematic.mp4"
+  ]
+}

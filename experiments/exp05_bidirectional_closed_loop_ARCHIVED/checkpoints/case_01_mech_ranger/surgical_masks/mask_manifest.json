@@ -1,0 +1,12 @@
+{
+  "flagged_frames_count": 4,
+  "flagged_indices": [
+    45,
+    46,
+    47,
+    48
+  ],
+  "dilation_radius_px": 8,
+  "border_ring_width_px": 16,
+  "mask_format": "PNG_Alpha8"
+}

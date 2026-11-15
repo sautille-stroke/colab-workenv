@@ -1,0 +1,93 @@
+{
+  "organization": "dervgen",
+  "base_url": "https://github.com/dervgen",
+  "repositories": [
+    {
+      "name": "all-overview",
+      "layer": 0,
+      "description": "DervGen ecosystem overview, architecture, standards and RFCs",
+      "default_branch": "main",
+      "priority": "P0"
+    },
+    {
+      "name": "aether",
+      "layer": 0,
+      "description": "Core cross-platform foundation (math, memory, ecs, pal, audio, io)",
+      "default_branch": "main",
+      "priority": "P0"
+    },
+    {
+      "name": "fluxus-core",
+      "layer": 0.5,
+      "description": "CUDA hardware primitives & high-performance kernels",
+      "default_branch": "main",
+      "priority": "P1"
+    },
+    {
+      "name": "fulgur",
+      "layer": 1,
+      "description": "AAA Real-time rendering engine (RHI, RenderGraph, shaders, world)",
+      "default_branch": "main",
+      "priority": "P0"
+    },
+    {
+      "name": "caelum-core",
+      "layer": 2,
+      "description": "Offline ray tracing & spectral path tracer core",
+      "default_branch": "main",
+      "priority": "P1"
+    },
+    {
+      "name": "vg-core",
+      "layer": 2,
+      "description": "Visual graphics algorithms (actor, reverse-render, reconstruction)",
+      "default_branch": "main",
+      "priority": "P1"
+    },
+    {
+      "name": "anima",
+      "layer": 2,
+      "description": "Game runtime, gameplay orchestration, GAS & deterministic replay",
+      "default_branch": "main",
+      "priority": "P1"
+    },
+    {
+      "name": "synapse",
+      "layer": 2.5,
+      "description": "3D CG & Neural Video generation interop hub & hybrid cinema pipeline (RFC 0044 & 0059)",
+      "url": "https://github.com/sautille-stroke/synapse.git",
+      "default_branch": "main",
+      "priority": "P0"
+    },
+    {
+      "name": "asset-forge",
+      "layer": 2.5,
+      "description": "3D asset & material workshop (topology, OpenPBR, rigging)",
+      "default_branch": "main",
+      "priority": "P2"
+    },
+    {
+      "name": "scene-forge",
+      "layer": 2.5,
+      "description": "3D spatial scene & environment staging workshop",
+      "default_branch": "main",
+      "priority": "P2"
+    },
+    {
+      "name": "unveil-ai",
+      "layer": 2.5,
+      "description": "High-fidelity anatomical inpainting, de-mosaic, and micro-texture reconstruction suite",
+      "url": "https://github.com/sautille-stroke/unveil-ai.git",
+      "default_branch": "main",
+      "priority": "P1"
+    },
+    {
+      "name": "motionbricks",
+      "layer": 2,
+      "description": "NVIDIA MotionBricks: Scalable Real-Time Motions with Modular Latent Generative Model & Smart Primitives (SIGGRAPH 2026, Apache 2.0)",
+      "url": "https://github.com/NVlabs/motionbricks.git",
+      "default_branch": "main",
+      "priority": "P1"
+    }
+  ]
+}

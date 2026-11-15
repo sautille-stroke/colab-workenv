@@ -1,0 +1,39 @@
+{
+  "workspace_name": "dervgen-colab-workspace",
+  "version": "2.0.0",
+  "storage_ssot": {
+    "mount_base": "/content/drive/MyDrive/dervgen",
+    "data_dir": "data",
+    "models_subdir": "models",
+    "model_usages": [
+      "3d_recon",
+      "texture_gen",
+      "video_gen",
+      "actor_dynamics",
+      "audio_foley",
+      "foundation",
+      "denoise_upscale"
+    ],
+    "data_categories": [
+      "benchmarks",
+      "evaluations",
+      "captures",
+      "raw"
+    ],
+    "work_dir": "work",
+    "work_schema": "{user}/{repo}/{date}/{job_id}",
+    "job_subdirs": [
+      "input",
+      "output",
+      "checkpoints",
+      "logs"
+    ],
+    "tools_dir": "tools",
+    "cache_dir": "cache"
+  },
+  "runtime_paths": {
+    "local_workspace": "/content/colab-workenv",
+    "local_ecosystem_root": "/content/dervgen",
+    "preferred_bazel_version": "9.3.1"
+  }
+}
